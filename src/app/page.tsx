@@ -33,12 +33,11 @@ const pictures = Array(6).fill({
   src: "https://via.placeholder.com/300",
   name: "Lorem ipsum",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-})
+});
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-4">
-
       <YouTube videoId="W8-KJPoo4uw" />
 
       <section className="flex flex-col">
@@ -140,7 +139,6 @@ export default function Home() {
         </h3>
         <Gallery photos={pictures} />
       </section>
-
     </div>
   );
 }
