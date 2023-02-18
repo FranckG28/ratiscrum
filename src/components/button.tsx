@@ -3,12 +3,15 @@ import Link from "next/link";
 const buttonStyle: { [key: string]: string } = {
   primary:
     "py-2 px-4 bg-indigo-500 hover:bg-indigo-600 text-white border-t border-indigo-400 shadow hover:shadow-lg",
-  flat: "bg-transparent text-indigo-500 hover:text-indigo-600",
+  flat: "bg-transparent text-indigo-400 hover:text-indigo-500",
 };
 
 export default function Button({ children, style, href }: ButtonProps) {
   return (
-    <Link href={href} className={`transition rounded-lg ${buttonStyle[style]}`}>
+    <Link
+      href={href}
+      className={`transition rounded-lg flex gap-2 ${buttonStyle[style]}`}
+    >
       {children}
     </Link>
   );
