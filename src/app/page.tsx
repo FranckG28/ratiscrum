@@ -4,6 +4,7 @@ import ImageSlider from "@/components/image-slider";
 import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
 import Gallery from "@/components/gallery";
 import MemberComponent from "@/components/member";
+import YouTube from "@/components/youtube";
 
 const members = Array(8).fill({
   name: "Romain",
@@ -37,7 +38,8 @@ const pictures = Array(6).fill({
 export default function Home() {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-white">vidéo ;)</h1>
+
+      <YouTube videoId="W8-KJPoo4uw" />
 
       <section className="flex flex-col">
         <p className="text-slate-300">14 décembre 2022</p>
