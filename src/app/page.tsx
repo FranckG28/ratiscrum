@@ -49,42 +49,41 @@ export default function Home() {
             description="1500€"
           ></Price>
         </div>
-
-        <section className="flex mt-4 gap-4 py-4">
-          <div className="w-2/3 gap-y-4 flex flex-col">
-            <div>
-              <p className="text-xl font-medium text-white">Notre projet</p>
-              <p className="text-slate-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                dignissimos molestias dolore unde! Vero voluptatem culpa
-                eligendi iusto voluptas sint temporibus consequatur alias
-                veritatis ipsum, odio praesentium, amet aspernatur deserunt?
-              </p>
-            </div>
-
-            <div className="flex gap-4">
-              <Button style="flat" href="/">
-                Ratiscrum.fr
-              </Button>
-              <Button style="flat" href="/">
-                Ratiscrum.fr
-              </Button>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <p className="text-xl font-medium text-white">
-                Technologies utilisés
-              </p>
-              <div className="flex gap-2">
-                <p className="text-slate-400">React, Sequelite, TailwindCSS</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col w-1/3">
-            <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
-          </div>
-        </section>
       </div>
+      <section className="flex mt-4 gap-4 py-4">
+        <div className="w-2/3 gap-y-4 flex flex-col">
+          <div>
+            <p className="text-xl font-medium text-white">Notre projet</p>
+            <p className="text-slate-400">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              dignissimos molestias dolore unde! Vero voluptatem culpa eligendi
+              iusto voluptas sint temporibus consequatur alias veritatis ipsum,
+              odio praesentium, amet aspernatur deserunt?
+            </p>
+          </div>
+
+          <div className="flex gap-4">
+            <Button style="flat" href="/">
+              Ratiscrum.fr
+            </Button>
+            <Button style="flat" href="/">
+              Ratiscrum.fr
+            </Button>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-xl font-medium text-white">
+              Technologies utilisés
+            </p>
+            <div className="flex gap-2">
+              <p className="text-slate-400">React, Sequelite, TailwindCSS</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col w-1/3">
+          <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
+        </div>
+      </section>
     </div>
   );
 }
