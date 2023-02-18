@@ -1,14 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import Badge from "./badge";
 import RatiscrumLogo from "/public/rts-logo.png"
 
 export default function Sidebar() {
     return (
         <nav className='flex flex-col bg-slate-800 border-r gap-3 border-slate-700 shadow-lg p-5 w-72'>
-            <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
-
+            <Link className="w-48" href={"/"}>
+                <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
+            </Link>
             {items.map((item, index) => (<NavItem key={index} {...item} />))}
-
         </nav>
     )
 }
