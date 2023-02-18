@@ -8,7 +8,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
       {photos.map((photo, index) => (
-        <Zoom>
+        <Zoom key={"zoom" + index}>
           <Image
             width={300}
             height={175}
