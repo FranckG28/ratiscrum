@@ -1,8 +1,7 @@
 import Button from "@/components/button";
 import Member from "@/components/member";
 import Reward from "@/components/reward";
-import Image from "next/image";
-import RatiscrumLogo from "/public/rts-logo.png";
+import ImageSlider from "@/components/image-slider";
 import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
 
 const members = Array(8).fill({
@@ -13,19 +12,19 @@ const members = Array(8).fill({
     {
       name: "LinkedIn",
       icon: "linkedin",
-      url: "https://www.linkedin.com/in/romain-roux-1b1b4b1b1/"
+      url: "https://www.linkedin.com/in/romain-roux-1b1b4b1b1/",
     },
     {
       name: "GitHub",
       icon: "github",
-      url: "https://github.com/romainroux"
+      url: "https://github.com/romainroux",
     },
     {
       name: "YouTube",
       icon: "youtube",
-      url: "https://www.youtube.com/channel/UCZ2X2Z2X2Z2X2Z2X2Z2X2Z2"
-    }
-  ]
+      url: "https://www.youtube.com/channel/UCZ2X2Z2X2Z2X2Z2X2Z2X2Z2",
+    },
+  ],
 });
 
 export default function Home() {
@@ -38,7 +37,7 @@ export default function Home() {
         <h1 className="text-5xl text-white font-semibold tracking-tighter">
           Nuit de l&apos;info 2022
         </h1>
-        <div className="flex items-center gap-2 py-3">
+        <div className="flex items-center gap-4 py-3">
           <Button style="primary" href="/">
             Visiter
             <ExternalLink size={22} />
@@ -77,15 +76,17 @@ export default function Home() {
       </section>
 
       <section className="">
-        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">Notre projet</h3>
+        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">
+          Notre projet
+        </h3>
         <div className="flex max-lg:flex-col gap-4">
           <div className="lg:w-2/3 gap-y-4 flex flex-col">
             <div>
               <p className="text-slate-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                dignissimos molestias dolore unde! Vero voluptatem culpa eligendi
-                iusto voluptas sint temporibus consequatur alias veritatis ipsum,
-                odio praesentium, amet aspernatur deserunt?
+                dignissimos molestias dolore unde! Vero voluptatem culpa
+                eligendi iusto voluptas sint temporibus consequatur alias
+                veritatis ipsum, odio praesentium, amet aspernatur deserunt?
               </p>
             </div>
 
@@ -101,25 +102,28 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="text-lg font-medium text-slate-200 tracking-tight">Technologies utilisés</h4>
+              <h4 className="text-lg font-medium text-slate-200 tracking-tight">
+                Technologies utilisés
+              </h4>
               <p className="text-slate-400">React, Sequelite, TailwindCSS</p>
             </div>
           </div>
-          <div className="flex flex-col lg:w-1/3">
-            <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
+          <div className="flex flex-col w-1/3">
+            <ImageSlider />
           </div>
         </div>
-
       </section>
 
       <section>
-        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">L&apos;équipe</h3>
+        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">
+          L&apos;équipe
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
           {members.map((member, index) => (
-            <Member key={index} {...member} />))}
+            <Member key={index} {...member} />
+          ))}
         </div>
       </section>
-
     </div>
   );
 }
