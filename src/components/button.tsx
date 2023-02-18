@@ -1,3 +1,4 @@
+import { ButtonProps } from "@/models/button.props";
 import Link from "next/link";
 
 const buttonStyle: { [key: string]: string } = {
@@ -15,11 +16,4 @@ export default function Button({ children, style, href, className }: ButtonProps
       {children}
     </Link>
   );
-}
-
-export interface ButtonProps {
-  children: React.ReactNode;
-  style: "primary" | "flat";
-  href: string;
-  className?: string;
 }
