@@ -24,8 +24,8 @@ export default function RootLayout({
 
         <Sidebar />
 
-        <main className='flex-1 overflow-auto px-3'>
-          <div className="mx-auto max-w-6xl">
+        <main className='flex-1 overflow-auto px-4'>
+          <div className="mx-auto max-w-6xl py-8">
             {children}
           </div>
         </main>

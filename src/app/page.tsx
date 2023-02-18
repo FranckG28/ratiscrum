@@ -30,7 +30,7 @@ const members = Array(8).fill({
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-4 py-5">
+    <div className="flex flex-col gap-4">
       <h1 className="text-white">vidéo ;)</h1>
 
       <section className="flex flex-col">
@@ -54,7 +54,7 @@ export default function Home() {
           <Medal />
           Résultats
         </p>
-        <div className="grid grid-cols-3 gap-2 gap-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 gap-y-4">
           <Price
             rank={1}
             title="VEGA CS GROUP 2022"
@@ -75,7 +75,7 @@ export default function Home() {
 
       <section className="">
         <h3 className="text-xl text-slate-100 font-medium py-2">Notre projet</h3>
-        <div className="flex gap-4">
+        <div className="flex max-lg:flex-col gap-4">
           <div className="w-2/3 gap-y-4 flex flex-col">
             <div>
               <p className="text-slate-400">
@@ -115,7 +115,7 @@ export default function Home() {
 
       <section>
         <h3 className="text-xl text-slate-100 font-medium py-2">L&apos;équipe</h3>
-        <div className="grid grid-cols-4 gap-2 gap-y-4 my-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
           {members.map((member, index) => (
             <Member key={index} {...member} />))}
         </div>
