@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
-import Cathedrale from "/public/cathedrale.jpg";
 import Rts2021 from "/public/rts2021.jpg";
 import Rts2022 from "/public/rts2022.jpg";
 import RatiscrumLogo from "/public/rts-logo.png";
@@ -67,7 +66,9 @@ export default function ImageSlider() {
             className="keen-slider__slide rounded-xl shadow border-t border-slate-600/30"
           >
             <Image
-              className="bg-cover bg-center"
+              className={`bg-cover bg-center ${
+                loaded ? "opacity-100" : "opacity-0"
+              } transition-opacity duration-500 ease-in-out`}
               src={image}
               alt="Ratiscrum Logo"
               style={{ objectFit: "cover", height: "100%", width: "100%" }}
