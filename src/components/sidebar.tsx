@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Badge from "./badge";
 import RatiscrumLogo from "/public/rts-logo.png"
+import { NavItem } from "@/models/nav-item";
 
 export default function Sidebar() {
     return (
@@ -14,15 +15,8 @@ export default function Sidebar() {
     )
 }
 
-interface NavItemProps {
-    title: string
-    subtitle?: string
-    info: string;
-    isActive: boolean;
-    url: string;
-}
 
-const items: NavItemProps[] = [
+const items: NavItem[] = [
     {
         title: "Nuit de l'info 2022",
         subtitle: "2 décembre 20022",
@@ -41,7 +35,7 @@ const items: NavItemProps[] = [
 
 
 
-function NavItem(props: NavItemProps) {
+function NavItem(props: NavItem) {
 
     return (
         <Link href={props.url} className={`relative flex flex-col px-5 py-4 rounded-lg ${props.isActive ? 'bg-slate-700' : 'hover:bg-slate-400/5'}`}>

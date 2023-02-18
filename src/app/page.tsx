@@ -1,8 +1,9 @@
 import Button from "@/components/button";
-import Member from "@/components/member";
 import Reward from "@/components/reward";
 import ImageSlider from "@/components/image-slider";
 import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
+import Gallery from "@/components/gallery";
+import MemberComponent from "@/components/member";
 
 const members = Array(8).fill({
   name: "Romain",
@@ -26,6 +27,12 @@ const members = Array(8).fill({
     },
   ],
 });
+
+const pictures = Array(6).fill({
+  src: "https://via.placeholder.com/300",
+  name: "Lorem ipsum",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+})
 
 export default function Home() {
   return (
@@ -120,10 +127,18 @@ export default function Home() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
           {members.map((member, index) => (
-            <Member key={index} {...member} />
+            <MemberComponent key={index} {...member} />
           ))}
         </div>
       </section>
+
+      <section className="flex flex-col gap-2">
+        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">
+          Album photo
+        </h3>
+        <Gallery photos={pictures} />
+      </section>
+
     </div>
   );
 }

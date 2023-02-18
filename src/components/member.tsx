@@ -2,19 +2,7 @@ import React from "react";
 import { Github, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-export interface MemberProps {
-    name: string;
-    role: string;
-    avatar: string;
-    links: MemberLinkProps[];
-}
-
-export interface MemberLinkProps {
-    name: string;
-    icon: string;
-    url: string;
-}
+import { Member } from "@/models/member";
 
 const iconClass = "text-slate-500 hover:text-slate-300 transition w-5 h-5";
 
@@ -24,7 +12,7 @@ const memberIcons: { [icon: string]: React.ReactNode } = {
     youtube: <Youtube className={iconClass} />
 };
 
-export default function Member({ name, role, avatar, links }: MemberProps) {
+export default function MemberComponent({ name, role, avatar, links }: Member) {
     return <div className="flex flex-col items-center gap-1">
         <Image src={avatar} width={75} height={75} className="rounded-full border border-slate-300/20 my-2" alt={name} />
         <p className="text-white text-lg font-medium leading-4">{name}</p>
