@@ -1,7 +1,31 @@
 import Button from "@/components/button";
+import Member from "@/components/member";
 import Price from "@/components/price";
 import { ExternalLink } from 'lucide-react';
 import { Medal } from 'lucide-react';
+
+const members = Array(8).fill({
+  name: "Romain",
+  role: "Chef de projet",
+  avatar: "https://via.placeholder.com/75",
+  links: [
+    {
+      name: "LinkedIn",
+      icon: "linkedin",
+      url: "https://www.linkedin.com/in/romain-roux-1b1b4b1b1/"
+    },
+    {
+      name: "GitHub",
+      icon: "github",
+      url: "https://github.com/romainroux"
+    },
+    {
+      name: "YouTube",
+      icon: "youtube",
+      url: "https://www.youtube.com/channel/UCZ2X2Z2X2Z2X2Z2X2Z2X2Z2"
+    }
+  ]
+});
 
 export default function Home() {
   return (
@@ -45,6 +69,10 @@ export default function Home() {
 
       <section>
         <h3 className="text-xl text-slate-100 font-medium">L&apos;équipe</h3>
+        <div className="grid grid-cols-4 gap-2 gap-y-4 my-4">
+          {members.map((member, index) => (
+            <Member key={index} {...member} />))}
+        </div>
       </section>
 
     </div>
