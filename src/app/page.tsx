@@ -1,6 +1,6 @@
 import Button from "@/components/button";
 import Member from "@/components/member";
-import Price from "@/components/price";
+import Reward from "@/components/reward";
 import Image from "next/image";
 import RatiscrumLogo from "/public/rts-logo.png";
 import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
@@ -54,22 +54,25 @@ export default function Home() {
           <Medal size={20} />
           Résultats
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 gap-y-4">
-          <Price
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          <Reward
             rank={1}
             title="VEGA CS GROUP 2022"
             description="1500€"
-          ></Price>
-          <Price
+            url="/"
+          ></Reward>
+          <Reward
             rank={2}
             title="VEGA CS GROUP 2022"
             description="1500€"
-          ></Price>
-          <Price
+            url="/"
+          ></Reward>
+          <Reward
             rank={3}
             title="VEGA CS GROUP 2022"
             description="1500€"
-          ></Price>
+            url="/"
+          ></Reward>
         </div>
       </section>
 
