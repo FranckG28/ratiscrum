@@ -19,6 +19,7 @@ interface NavItemProps {
     subtitle?: string
     info: string;
     isActive: boolean;
+    url: string;
 }
 
 const items: NavItemProps[] = [
@@ -27,23 +28,28 @@ const items: NavItemProps[] = [
         subtitle: "2 décembre 20022",
         info: "3 récompenses",
         isActive: true,
+        url: '/'
     },
     {
         title: "Nuit de l'info 2021",
         subtitle: "2 décembre 2021",
         info: "2 récompenses",
         isActive: false,
+        url: '/'
     }
 ];
+
+
 
 function NavItem(props: NavItemProps) {
 
     return (
-        <div className={`flex flex-col px-5 py-3 rounded-lg ${props.isActive ? 'bg-slate-700' : ''}`}>
-            <p className="text-slate-400 text-sm">{props.subtitle}</p>
-            <p className="text-white text-lg">{props.title}</p>
+        <Link href={props.url} className={`relative flex flex-col px-5 py-4 rounded-lg ${props.isActive ? 'bg-slate-700' : 'hover:bg-slate-400/5'}`}>
+            <p className="text-slate-400 text-sm leading-3">{props.subtitle}</p>
+            <p className="text-white text-lg font-medium">{props.title}</p>
             <Badge text={props.info}></Badge>
-        </div>
+            <span className={`absolute inset-y-4 -left-px w-1 rounded-full bg-gradient-to-b ${props.isActive ? "bg-indigo-500" : "bg-slate-400/20"}`}></span>
+        </Link>
     )
 
 }

@@ -8,7 +8,7 @@ export default function Price({ rank, title, description }: PriceProps) {
       </div>
       <div className="flex flex-col">
         <p className="text-white text-lg font-medium">{title}</p>
-        {description && <p className="text-slate-300 text-sm">{description}</p>}
+        {description && <p className="text-slate-400 text-sm">{description}</p>}
       </div>
     </div>
   );
