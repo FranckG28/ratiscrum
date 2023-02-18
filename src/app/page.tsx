@@ -49,9 +49,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex rounded-lg flex-col border border-slate-300/40 gap-3 p-5">
-        <p className="text-slate-300 flex gap-2 font-medium">
-          <Medal />
+      <section className="flex rounded-lg flex-col border border-slate-500/50 gap-3 p-5">
+        <p className="text-slate-300 flex gap-2 font-medium items-center">
+          <Medal size={20} />
           Résultats
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 gap-y-4">
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       <section className="">
-        <h3 className="text-xl text-slate-100 font-medium py-2">Notre projet</h3>
+        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">Notre projet</h3>
         <div className="flex max-lg:flex-col gap-4">
           <div className="lg:w-2/3 gap-y-4 flex flex-col">
             <div>
@@ -88,22 +88,18 @@ export default function Home() {
 
             <div className="flex gap-8">
               <Button style="flat" href="/">
-                <LinkIcon size={22} />
+                <LinkIcon size={20} />
                 Ratiscrum.fr
               </Button>
               <Button style="flat" href="/">
-                <Code2 size={22} />
+                <Code2 size={20} />
                 Ratiscrum.fr
               </Button>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <p className="text-xl font-medium text-white">
-                Technologies utilisés
-              </p>
-              <div className="flex gap-2">
-                <p className="text-slate-400">React, Sequelite, TailwindCSS</p>
-              </div>
+            <div>
+              <h4 className="text-lg font-medium text-slate-200 tracking-tight">Technologies utilisés</h4>
+              <p className="text-slate-400">React, Sequelite, TailwindCSS</p>
             </div>
           </div>
           <div className="flex flex-col lg:w-1/3">
@@ -114,7 +110,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h3 className="text-xl text-slate-100 font-medium py-2">L&apos;équipe</h3>
+        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">L&apos;équipe</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
           {members.map((member, index) => (
             <Member key={index} {...member} />))}

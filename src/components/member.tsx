@@ -25,11 +25,11 @@ const memberIcons: { [icon: string]: React.ReactNode } = {
 };
 
 export default function Member({ name, role, avatar, links }: MemberProps) {
-    return <div className="flex flex-col items-center">
-        <Image src={avatar} width={75} height={75} className="rounded-full border border-slate-300/20 my-1" alt={name} />
-        <p className="text-white text-lg">{name}</p>
+    return <div className="flex flex-col items-center gap-1">
+        <Image src={avatar} width={75} height={75} className="rounded-full border border-slate-300/20 my-2" alt={name} />
+        <p className="text-white text-lg font-medium leading-4">{name}</p>
         <p className="text-slate-400 text-sm">{role}</p>
-        <div className="flex gap-3 my-2">
+        <div className="flex gap-3">
             {links.map(({ name, icon, url }) => (<Link key={name} aria-label={name} href={url}>
                 {memberIcons[icon]}
             </Link>))}
