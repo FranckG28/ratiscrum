@@ -108,12 +108,9 @@ export default function Home() {
               <p className="text-slate-400">React, Sequelite, TailwindCSS</p>
             </div>
           </div>
-          <div className="flex flex-col lg:w-1/3">
-            <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
+          <div className="flex flex-col w-1/3">
+            <ImageSlider />
           </div>
-        </div>
-        <div className="flex flex-col w-1/3">
-          <ImageSlider />
         </div>
       </section>
 
