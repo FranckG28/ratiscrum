@@ -76,7 +76,7 @@ export default function Home() {
       <section className="">
         <h3 className="text-xl text-slate-100 font-medium py-2">Notre projet</h3>
         <div className="flex max-lg:flex-col gap-4">
-          <div className="w-2/3 gap-y-4 flex flex-col">
+          <div className="lg:w-2/3 gap-y-4 flex flex-col">
             <div>
               <p className="text-slate-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
@@ -106,7 +106,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-1/3">
+          <div className="flex flex-col lg:w-1/3">
             <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
           </div>
         </div>
