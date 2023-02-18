@@ -3,9 +3,7 @@ import Price from "@/components/price";
 import Image from "next/image";
 import Link from "next/link";
 import RatiscrumLogo from "/public/rts-logo.png";
-import { ExternalLink } from "lucide-react";
-import { Medal } from "lucide-react";
-
+import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
 export default function Home() {
   return (
     <div className="flex flex-col gap-2 py-5">
@@ -62,11 +60,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-8">
             <Button style="flat" href="/">
+              <LinkIcon size={22} />
               Ratiscrum.fr
             </Button>
             <Button style="flat" href="/">
+              <Code2 size={22} />
               Ratiscrum.fr
             </Button>
           </div>
