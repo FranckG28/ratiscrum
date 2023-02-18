@@ -16,15 +16,19 @@ export default function ImageSlider() {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
-      slideChanged(slider) {
+      slides: {
+        spacing: 15,
+      },
+      slideChanged(slider: any) {
         setCurrentSlide(slider.track.details.rel);
       },
       created() {
         setLoaded(true);
       },
     },
+
     [
-      (slider) => {
+      (slider: any) => {
         let timeout: ReturnType<typeof setTimeout>;
         let mouseOver = false;
         function clearNextTimeout() {
