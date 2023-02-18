@@ -43,7 +43,7 @@ export default function Home() {
             Visiter
             <ExternalLink size={22} />
           </Button>
-          <Button style="flat" href="/">
+          <Button style="flat" href="/" className="px-4">
             Site officiel
           </Button>
         </div>

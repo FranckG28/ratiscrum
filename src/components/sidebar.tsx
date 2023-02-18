@@ -36,13 +36,16 @@ const items: NavItemProps[] = [
     }
 ];
 
+
+
 function NavItem(props: NavItemProps) {
 
     return (
-        <div className={`flex flex-col px-5 py-3 rounded-lg ${props.isActive ? 'bg-slate-700' : ''}`}>
+        <div className={`relative flex flex-col px-5 py-3 rounded-lg ${props.isActive ? 'bg-slate-700' : ''}`}>
             <p className="text-slate-400 text-sm">{props.subtitle}</p>
             <p className="text-white text-lg">{props.title}</p>
             <Badge text={props.info}></Badge>
+            <span className={`absolute inset-y-4 -left-px w-1 rounded-full bg-gradient-to-b ${props.isActive ? "bg-indigo-500" : "bg-slate-400/20"}`}></span>
         </div>
     )
 
