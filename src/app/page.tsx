@@ -3,6 +3,7 @@ import Member from "@/components/member";
 import Reward from "@/components/reward";
 import ImageSlider from "@/components/image-slider";
 import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
+import Gallery from "@/components/gallery";
 
 const members = Array(8).fill({
   name: "Romain",
@@ -26,6 +27,12 @@ const members = Array(8).fill({
     },
   ],
 });
+
+const pictures = Array(6).fill({
+  src: "https://via.placeholder.com/300",
+  name: "Lorem ipsum",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+})
 
 export default function Home() {
   return (
@@ -124,6 +131,14 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section className="flex flex-col gap-2">
+        <h3 className="text-xl text-slate-100 font-medium py-2 tracking-tight">
+          Album photo
+        </h3>
+        <Gallery photos={pictures} />
+      </section>
+
     </div>
   );
 }
