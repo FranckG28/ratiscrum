@@ -1,14 +1,11 @@
 import Button from "@/components/button";
 import Price from "@/components/price";
-<<<<<<< HEAD
 import Image from "next/image";
 import Link from "next/link";
 import RatiscrumLogo from "/public/rts-logo.png";
-=======
-import { ExternalLink } from 'lucide-react';
-import { Medal } from 'lucide-react';
+import { ExternalLink } from "lucide-react";
+import { Medal } from "lucide-react";
 
->>>>>>> db55a2edba36dbfea337e7558e55fed011e45073
 export default function Home() {
   return (
     <div className="flex flex-col gap-2 py-5">
@@ -16,20 +13,25 @@ export default function Home() {
 
       <div className="flex flex-col">
         <p className="text-slate-300">14 décembre 2022</p>
-        <h1 className="text-4xl text-white font-medium">Nuit de l&apos;info 2022</h1>
+        <h1 className="text-4xl text-white font-medium">
+          Nuit de l&apos;info 2022
+        </h1>
         <div className="flex items-center gap-2 py-3">
           <Button style="primary" href="/">
             Visiter
-            <ExternalLink size={22} /></Button>
+            <ExternalLink size={22} />
+          </Button>
           <Button style="flat" href="/">
             Site officiel
           </Button>
         </div>
-
       </div>
 
       <div className="flex rounded-lg flex-col border border-slate-300/40 gap-3 p-5">
-        <p className="text-slate-300 flex gap-2 font-medium"><Medal />Résultats</p>
+        <p className="text-slate-300 flex gap-2 font-medium">
+          <Medal />
+          Résultats
+        </p>
         <div className="grid grid-cols-3 gap-2 gap-y-4">
           <Price
             rank={1}
@@ -83,7 +85,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-
     </div>
   );
 }
