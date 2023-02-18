@@ -1,9 +1,8 @@
 import Button from "@/components/button";
 import Price from "@/components/price";
-import Image from "next/image";
-import Link from "next/link";
-import RatiscrumLogo from "/public/rts-logo.png";
+import ImageSlider from "@/components/imageSlider";
 import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-2 py-5">
@@ -14,7 +13,7 @@ export default function Home() {
         <h1 className="text-4xl text-white font-medium">
           Nuit de l&apos;info 2022
         </h1>
-        <div className="flex items-center gap-2 py-3">
+        <div className="flex items-center gap-4 py-3">
           <Button style="primary" href="/">
             Visiter
             <ExternalLink size={22} />
@@ -81,7 +80,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col w-1/3">
-          <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
+          <ImageSlider />
         </div>
       </section>
     </div>
