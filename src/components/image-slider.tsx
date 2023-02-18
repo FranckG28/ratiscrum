@@ -10,17 +10,51 @@ import Rts2022 from "/public/rts2022.jpg";
 import RatiscrumLogo from "/public/rts-logo.png";
 
 export default function ImageSlider() {
+  const AUTO_SLIDE_INTERVAL = 4000;
+
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+    {
+      loop: true,
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel);
+      },
+      created() {
+        setLoaded(true);
+      },
     },
-    created() {
-      setLoaded(true);
-    },
-  });
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let mouseOver = false;
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, AUTO_SLIDE_INTERVAL);
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+      },
+    ]
+  );
 
   const images = [Rts2021, Rts2022, RatiscrumLogo];
 
@@ -28,7 +62,10 @@ export default function ImageSlider() {
     <div className="navigation-wrapper relative">
       <div ref={sliderRef} className="keen-slider">
         {images.map((image, index) => (
-          <div key={index} className="keen-slider__slide rounded-xl shadow border-t border-slate-600/30">
+          <div
+            key={index}
+            className="keen-slider__slide rounded-xl shadow border-t border-slate-600/30"
+          >
             <Image
               className="bg-cover bg-center"
               src={image}
@@ -36,8 +73,7 @@ export default function ImageSlider() {
               style={{ objectFit: "cover", height: "100%", width: "100%" }}
             />
           </div>
-        ))
-        }
+        ))}
       </div>
       {loaded && instanceRef.current && (
         <>
@@ -73,8 +109,9 @@ function Arrow(props: {
   return (
     <svg
       onClick={props.onClick}
-      className={`bg-gray-700 transition border-t hover:scale-105 border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-200 cursor-pointer hover:bg-gray-800 ${props.left ? "-left-6" : "-right-6 left-auto"
-        } ${disabeld}`}
+      className={`bg-gray-700 transition border-t hover:scale-105 border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-200 cursor-pointer hover:bg-gray-800 ${
+        props.left ? "-left-6" : "-right-6 left-auto"
+      } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
