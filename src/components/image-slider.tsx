@@ -62,7 +62,7 @@ export default function ImageSlider() {
   const images = [Rts2021, Rts2022, RatiscrumLogo];
 
   return (
-    <div className="navigation-wrapper relative">
+    <div className="navigation-wrapper relative mr-10">
       <div ref={sliderRef} className="keen-slider">
         {images.map((image, index) => (
           <div
@@ -114,7 +114,7 @@ function Arrow(props: {
   return (
     <svg
       onClick={props.onClick}
-      className={`bg-gray-700 transition border-t hover:scale-105 border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-200 cursor-pointer hover:bg-gray-800 ${
+      className={`bg-gray-200 dark:bg-gray-700 transition border-t hover:scale-105 border-gray-100 dark:border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-800 dark:fill-slate-200 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-800 ${
         props.left ? "-left-6" : "-right-6 left-auto"
       } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
