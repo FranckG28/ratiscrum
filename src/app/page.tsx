@@ -126,7 +126,7 @@ export default function Home() {
         <h3 className="text-xl text-slate-600 dark:text-slate-100 font-medium py-2 tracking-tight">
           L&apos;équipe
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
+        <div className="grid grid-cols-2md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
           {members.map((member, index) => (
             <MemberComponent key={index} {...member} />
           ))}
