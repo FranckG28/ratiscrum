@@ -6,9 +6,9 @@ export default function Reward({ rank, title, description, url }: RewardProps) {
   return (
     <Link
       href={url}
-      className="flex gap-2 items-center p-3 transition hover:bg-slate-500/20 dark:hover:bg-slate-700/40 duration-75 rounded-xl"
+      className="flex gap-2 items-center p-3 transition hover:bg-slate-300/20 dark:hover:bg-slate-700/40 duration-75 rounded-xl"
     >
-      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700/50 border border-slate-400/20">
+      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-300/50 border border-slate-400/20 dark:bg-slate-700/50">
         <p className="text-slate-800 dark:text-white text-xl font-medium">
           {emoji[rank - 1]}
         </p>

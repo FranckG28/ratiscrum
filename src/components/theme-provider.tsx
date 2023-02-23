@@ -10,6 +10,6 @@ export default function ThemeProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<ThemeContextType>("dark");
-  return <ThemeContext.Provider value="dark">{children}</ThemeContext.Provider>;
+  const [theme, setTheme] = useState<ThemeContextType>("light");
+  return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
 }

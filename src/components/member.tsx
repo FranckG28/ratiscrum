@@ -25,7 +25,7 @@ export default function MemberComponent({ name, role, avatar, links }: Member) {
       <p className="text-slate-800 dark:text-white text-lg font-medium leading-4">
         {name}
       </p>
-      <p className="text-slate-400 text-sm">{role}</p>
+      <p className="text-slate-500 dark:text-slate-400 text-sm">{role}</p>
       <div className="flex gap-3">
         {links.map(({ name, icon, url }) => (
           <Link key={name} aria-label={name} href={url}>

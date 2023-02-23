@@ -41,7 +41,7 @@ export default function Home() {
       <YouTube videoId="W8-KJPoo4uw" />
 
       <section className="flex flex-col">
-        <p className="text-slate-500 dark:text-slate-300">14 décembre 2022</p>
+        <p className="text-slate-800 dark:text-slate-300">14 décembre 2022</p>
         <h1 className="text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter">
           Nuit de l&apos;info 2022
         </h1>
@@ -57,7 +57,7 @@ export default function Home() {
       </section>
 
       <section className="flex rounded-lg flex-col border border-slate-500/50 gap-3 p-5">
-        <p className="text-slate-500 dark:text-slate-300 flex gap-2 font-medium items-center">
+        <p className="text-slate-800 dark:text-slate-300 flex gap-2 font-medium items-center">
           <Medal size={20} />
           Résultats
         </p>
@@ -84,13 +84,13 @@ export default function Home() {
       </section>
 
       <section className="">
-        <h3 className="text-xl text-slate-600 dark:text-slate-100 font-medium py-2 tracking-tight">
+        <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
           Notre projet
         </h3>
         <div className="flex max-lg:flex-col gap-4">
           <div className="lg:w-2/3 gap-y-4 flex flex-col">
             <div>
-              <p className="text-slate-400">
+              <p className="text-slate-600 dark:text-slate-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
                 dignissimos molestias dolore unde! Vero voluptatem culpa
                 eligendi iusto voluptas sint temporibus consequatur alias
@@ -110,10 +110,10 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="text-lg font-medium text-slate-500 dark:text-slate-200 tracking-tight">
+              <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200 tracking-tight">
                 Technologies utilisés
               </h4>
-              <p className="text-slate-400">React, Sequelite, TailwindCSS</p>
+              <p className="text-slate-600 dark:text-slate-400">React, Sequelite, TailwindCSS</p>
             </div>
           </div>
           <div className="flex flex-col lg:w-1/3">
@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h3 className="text-xl text-slate-600 dark:text-slate-100 font-medium py-2 tracking-tight">
+        <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
           L&apos;équipe
         </h3>
         <div className="grid grid-cols-2md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
@@ -134,7 +134,7 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col gap-2">
-        <h3 className="text-xl text-slate-500 dark:text-slate-100 font-medium py-2 tracking-tight">
+        <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
           Album photo
         </h3>
         <Gallery photos={pictures} />
