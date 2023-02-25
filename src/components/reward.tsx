@@ -1,8 +1,9 @@
+import { Reward } from "@/models/reward";
 import Link from "next/link";
 
 export const emoji: string[] = ["🥇", "🥈", "🥉"];
 
-export default function Reward({ rank, title, description, url }: RewardProps) {
+export default function Reward({ rank, title, description, url }: Reward) {
   return (
     <Link
       href={url}
@@ -25,11 +26,4 @@ export default function Reward({ rank, title, description, url }: RewardProps) {
       </div>
     </Link>
   );
-}
-
-export interface RewardProps {
-  rank: 1 | 2 | 3;
-  title: string;
-  description?: string;
-  url: string;
 }
