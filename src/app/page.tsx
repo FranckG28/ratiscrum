@@ -1,5 +1,5 @@
 import Button from "@/components/button";
-import Reward from "@/components/reward";
+import RewardComponent from "@/components/reward";
 import ImageSlider from "@/components/image-slider";
 import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
 import Gallery from "@/components/gallery";
@@ -62,24 +62,24 @@ export default function Home() {
           Résultats
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-          <Reward
+          <RewardComponent
             rank={1}
             title="VEGA CS GROUP 2022"
             description="1500€"
             url="/"
-          ></Reward>
-          <Reward
+          ></RewardComponent>
+          <RewardComponent
             rank={2}
             title="VEGA CS GROUP 2022"
             description="1500€"
             url="/"
-          ></Reward>
-          <Reward
+          ></RewardComponent>
+          <RewardComponent
             rank={3}
             title="VEGA CS GROUP 2022"
             description="1500€"
             url="/"
-          ></Reward>
+          ></RewardComponent>
         </div>
       </section>
 

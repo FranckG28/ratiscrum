@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const emoji: string[] = ["🥇", "🥈", "🥉"];
 
-export default function Reward({ rank, title, description, url }: Reward) {
+export default function RewardComponent({ rank, title, description, url }: Reward) {
   return (
     <Link
       href={url}
