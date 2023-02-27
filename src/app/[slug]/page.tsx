@@ -67,27 +67,30 @@ export default function EventPage({ params }: { params: { slug: string } }) {
           Notre projet
         </h3>
         <div className="flex max-xl:flex-col gap-8 xl:gap-16">
-          <div className="xl:w-2/3 gap-y-4 flex flex-col">
-            <div>
+          <div className="xl:w-2/3 gap-8 flex flex-col">
+            <div className="flex flex-col gap-4">
               <p className="text-slate-600 dark:text-slate-400">
                 {article.description}
               </p>
+
+              <div className="flex gap-2 xl:gap-8 max-xl:flex-col">
+                {article.projectLink && (
+                  <Button style="flat" href={article.projectLink}>
+                    <LinkIcon size={20} />
+                    {prettifyUrl(article.projectLink)}
+                  </Button>
+                )}
+                {article.sourceLink && (
+                  <Button style="flat" href={article.sourceLink}>
+                    <Code2 size={20} />
+                    {prettifyUrl(article.sourceLink)}
+                  </Button>
+                )}
+              </div>
+
+
             </div>
 
-            <div className="flex gap-2 xl:gap-8 max-xl:flex-col">
-              {article.projectLink && (
-                <Button style="flat" href={article.projectLink}>
-                  <LinkIcon size={20} />
-                  {prettifyUrl(article.projectLink)}
-                </Button>
-              )}
-              {article.sourceLink && (
-                <Button style="flat" href={article.sourceLink}>
-                  <Code2 size={20} />
-                  {prettifyUrl(article.sourceLink)}
-                </Button>
-              )}
-            </div>
 
             {article.technologies.length > 0 && (
               <div>
