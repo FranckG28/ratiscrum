@@ -8,7 +8,7 @@ import YouTube from "@/components/youtube";
 import { contentList } from "@/content/content-list";
 import { capitalize, displayDate, prettifyUrl } from "@/services/utils";
 
-export default function Home({ params }: { params: { slug: string } }) {
+export default function EventPage({ params }: { params: { slug: string } }) {
 
   const article = contentList.find((article) => article.slug === params.slug) || contentList[0];
 
