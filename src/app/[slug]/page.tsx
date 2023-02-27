@@ -15,7 +15,7 @@ export default function Home({ params }: { params: { slug: string } }) {
   return (
     <div className="flex flex-col gap-4">
 
-      <YouTube videoId={article.videoId} />
+      {article.videoId && <YouTube videoId={article.videoId} />}
 
       <section className="flex max-xl:flex-col lg:justify-between my-1">
 
@@ -28,17 +28,21 @@ export default function Home({ params }: { params: { slug: string } }) {
           </p>
         </div>
         <div className="flex items-center gap-4 py-3">
-          <Button style="primary" href={article.projectLink}>
-            Visiter
-            <ExternalLink size={22} />
-          </Button>
-          <Button style="flat" href={article.eventLink} className="px-4 xl:order-first">
-            Site officiel
-          </Button>
+          {article.projectLink && (
+            <Button style="primary" href={article.projectLink}>
+              Visiter
+              <ExternalLink size={22} />
+            </Button>
+          )}
+          {article.eventLink && (
+            <Button style="flat" href={article.eventLink} className="px-4 xl:order-first">
+              Site officiel
+            </Button>
+          )}
         </div>
       </section>
 
-      {article.rewards && (
+      {article.rewards.length > 0 && (
         <section className="flex rounded-lg flex-col border border-slate-500/50 gap-3 p-5">
           <p className="text-slate-800 dark:text-slate-300 flex gap-2 font-medium items-center">
             <Medal size={20} />
@@ -71,24 +75,30 @@ export default function Home({ params }: { params: { slug: string } }) {
             </div>
 
             <div className="flex gap-2 xl:gap-8 max-xl:flex-col">
-              <Button style="flat" href={article.projectLink}>
-                <LinkIcon size={20} />
-                {article.projectLink}
-              </Button>
-              <Button style="flat" href={article.sourceLink}>
-                <Code2 size={20} />
-                {article.sourceLink}
-              </Button>
+              {article.projectLink && (
+                <Button style="flat" href={article.projectLink}>
+                  <LinkIcon size={20} />
+                  {article.projectLink}
+                </Button>
+              )}
+              {article.sourceLink && (
+                <Button style="flat" href={article.sourceLink}>
+                  <Code2 size={20} />
+                  {article.sourceLink}
+                </Button>
+              )}
             </div>
 
-            <div>
-              <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200 tracking-tight">
-                Technologies utilisés
-              </h4>
-              <p className="text-slate-600 dark:text-slate-400">
-                {article.technologies.join(", ")}
-              </p>
-            </div>
+            {article.technologies.length > 0 && (
+              <div>
+                <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200 tracking-tight">
+                  Technologies utilisés
+                </h4>
+                <p className="text-slate-600 dark:text-slate-400">
+                  {article.technologies.join(", ")}
+                </p>
+              </div>
+            )}
           </div>
           <div className="flex flex-col xl:w-1/3">
             {article.projectCarousel.length > 0 && <ImageSlider images={article.projectCarousel} />}
@@ -96,23 +106,26 @@ export default function Home({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <section>
-        <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
-          L&apos;équipe
-        </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
-          {article.members.map((member, index) => (
-            <MemberComponent key={index} {...member} />
-          ))}
-        </div>
-      </section>
+      {article.members.length > 0 && (
+        <section>
+          <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
+            L&apos;équipe
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
+            {article.members.map((member, index) => (
+              <MemberComponent key={index} {...member} />
+            ))}
+          </div>
+        </section>)}
 
-      <section className="flex flex-col gap-2">
-        <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
-          Album photo
-        </h3>
-        <Gallery photos={article.album} />
-      </section>
+      {article.album.length > 0 && (
+        <section className="flex flex-col gap-2">
+          <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
+            Album photo
+          </h3>
+          <Gallery photos={article.album} />
+        </section>
+      )}
     </div>
   );
 }
