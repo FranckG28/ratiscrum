@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import Image from "next/image";
-import Rts2021 from "/public/rts2021.jpg";
-import Rts2022 from "/public/rts2022.jpg";
-import RatiscrumLogo from "/public/rts-logo.png";
+import Image, { StaticImageData } from "next/image";
 
-export default function ImageSlider() {
+export default function ImageSlider({
+  images,
+}: {
+  images: StaticImageData[];
+}) {
   const AUTO_SLIDE_INTERVAL = 4000;
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -59,10 +60,8 @@ export default function ImageSlider() {
     ]
   );
 
-  const images = [Rts2021, Rts2022, RatiscrumLogo];
-
   return (
-    <div className="navigation-wrapper relative mr-10">
+    <div className="navigation-wrapper relative">
       <div ref={sliderRef} className="keen-slider">
         {images.map((image, index) => (
           <div
@@ -70,9 +69,8 @@ export default function ImageSlider() {
             className="keen-slider__slide rounded-xl shadow border-t border-slate-600/30"
           >
             <Image
-              className={`bg-cover bg-center ${
-                loaded ? "opacity-100" : "opacity-0"
-              } transition-opacity duration-500 ease-in-out`}
+              className={`bg-cover bg-center ${loaded ? "opacity-100" : "opacity-0"
+                } transition-opacity duration-500 ease-in-out`}
               src={image}
               alt="Ratiscrum Logo"
               style={{ objectFit: "cover", height: "100%", width: "100%" }}
@@ -114,9 +112,8 @@ function Arrow(props: {
   return (
     <svg
       onClick={props.onClick}
-      className={`bg-gray-200 dark:bg-gray-700 transition border-t hover:scale-105 border-gray-100 dark:border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-800 dark:fill-slate-200 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-800 ${
-        props.left ? "-left-6" : "-right-6 left-auto"
-      } ${disabeld}`}
+      className={`bg-gray-200 dark:bg-gray-700 transition border-t hover:scale-105 border-gray-100 dark:border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-800 dark:fill-slate-200 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-800 ${props.left ? "-left-6" : "-right-6 left-auto"
+        } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
