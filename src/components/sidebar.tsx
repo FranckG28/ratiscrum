@@ -37,22 +37,3 @@ export default function Sidebar() {
     </nav>
   );
 }
-
-const items: NavItem[] = [
-  {
-    title: "Nuit de l'info 2022",
-    subtitle: "2 décembre 20022",
-    info: "3 récompenses",
-    isActive: true,
-    url: "/",
-  },
-  {
-    title: "Nuit de l'info 2021",
-    subtitle: "2 décembre 2021",
-    info: "2 récompenses",
-    isActive: false,
-    url: "/",
-  },
-];
-
-
