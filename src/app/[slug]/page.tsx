@@ -13,7 +13,7 @@ export default function Home({ params }: { params: { slug: string } }) {
   const article = contentList.find((article) => article.slug === params.slug) || contentList[0];
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
 
       {article.videoId && <YouTube videoId={article.videoId} />}
 
@@ -66,7 +66,7 @@ export default function Home({ params }: { params: { slug: string } }) {
         <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
           Notre projet
         </h3>
-        <div className="flex max-xl:flex-col gap-4">
+        <div className="flex max-xl:flex-col gap-8 xl:gap-16">
           <div className="xl:w-2/3 gap-y-4 flex flex-col">
             <div>
               <p className="text-slate-600 dark:text-slate-400">
