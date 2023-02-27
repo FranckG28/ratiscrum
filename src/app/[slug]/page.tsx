@@ -71,7 +71,7 @@ export default function Home({ params }: { params: { slug: string } }) {
               </p>
             </div>
 
-            <div className="flex gap-8">
+            <div className="flex gap-2 xl:gap-8 max-xl:flex-col">
               <Button style="flat" href={article.projectLink}>
                 <LinkIcon size={20} />
                 {article.projectLink}
