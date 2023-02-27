@@ -126,7 +126,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
           <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
             Album photo
           </h3>
-          <Gallery photos={article.album} />
+          <Gallery images={article.album} />
         </section>
       )}
     </div>
