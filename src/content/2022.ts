@@ -4,7 +4,7 @@ import Rts2022 from "@/assets/rts2022.jpg";
 export const event2022: Event = {
     slug: "ndli-2022",
     name: "Nuit de l'info 2022",
-    date: new Date(2022, 12, 1),
+    date: new Date("2022/12/01"),
     location: "UFR Math-Info, Strasbourg",
     description: "Ratisexe",
     technologies: ["React", "TailwindCSS", "Daisy UI"],

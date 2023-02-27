@@ -1,12 +1,13 @@
 import Button from "@/components/button";
 import RewardComponent from "@/components/reward";
 import ImageSlider from "@/components/image-slider";
-import { ExternalLink, Medal, Link as LinkIcon, Code2 } from "lucide-react";
+import { ExternalLink, Medal, Link as LinkIcon, Code2, MapPin } from "lucide-react";
 import Gallery from "@/components/gallery";
 import MemberComponent from "@/components/member";
 import YouTube from "@/components/youtube";
 import { Event } from "@/models/event";
 import { contentList } from "@/content/content-list";
+import { capitalize, displayDate } from "@/services/utils";
 
 export default function Home({ params }: { params: { slug: string } }) {
 
@@ -17,17 +18,22 @@ export default function Home({ params }: { params: { slug: string } }) {
 
       <YouTube videoId="W8-KJPoo4uw" />
 
-      <section className="flex flex-col">
-        <p className="text-slate-800 dark:text-slate-300">{article.date.toDateString()} </p>
-        <h1 className="text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter">
-          {article.name}
-        </h1>
+      <section className="flex max-xl:flex-col lg:justify-between my-1">
+
+        <div>
+          <h1 className="text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter leading-snug">
+            {article.name}
+          </h1>
+          <p className="text-slate-800 dark:text-slate-300 inline-flex gap-4">
+            {capitalize(displayDate(article.date))}, {article.location}
+          </p>
+        </div>
         <div className="flex items-center gap-4 py-3">
           <Button style="primary" href={article.projectLink}>
             Visiter
             <ExternalLink size={22} />
           </Button>
-          <Button style="flat" href={article.eventLink} className="px-4">
+          <Button style="flat" href={article.eventLink} className="px-4 xl:order-first">
             Site officiel
           </Button>
         </div>
