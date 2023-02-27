@@ -12,7 +12,7 @@ export const event2022: Event = {
     projectLink: "https://ratiscrum.tgimenez.fr/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/start",
     sourceLink: "https://github.com/Ratiscrum-V2/rts-app",
-    videoLink: "https://youtu.be/W8-KJPoo4uw",
+    videoId: "W8-KJPoo4uw",
     members: [
         {
             name: "Franck GUTMANN",

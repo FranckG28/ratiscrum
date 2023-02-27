@@ -12,7 +12,7 @@ export interface Event {
     projectLink: string;
     eventLink: string;
     sourceLink: string;
-    videoLink: string;
+    videoId: string;
     members: Member[];
     rewards: Reward[];
     projectCarousel: StaticImageData[];

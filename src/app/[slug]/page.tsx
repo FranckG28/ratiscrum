@@ -5,7 +5,6 @@ import { ExternalLink, Medal, Link as LinkIcon, Code2, MapPin } from "lucide-rea
 import Gallery from "@/components/gallery";
 import MemberComponent from "@/components/member";
 import YouTube from "@/components/youtube";
-import { Event } from "@/models/event";
 import { contentList } from "@/content/content-list";
 import { capitalize, displayDate } from "@/services/utils";
 
@@ -16,7 +15,7 @@ export default function Home({ params }: { params: { slug: string } }) {
   return (
     <div className="flex flex-col gap-4">
 
-      <YouTube videoId="W8-KJPoo4uw" />
+      <YouTube videoId={article.videoId} />
 
       <section className="flex max-xl:flex-col lg:justify-between my-1">
 

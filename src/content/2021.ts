@@ -12,7 +12,7 @@ export const event2021: Event = {
     projectLink: "https://ndli.depret.net/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/editions_precedentes:2021",
     sourceLink: "",
-    videoLink: "https://youtu.be/PxYjpuAVBN8",
+    videoId: "PxYjpuAVBN8",
     members: [
         {
             name: "Franck GUTMANN",
