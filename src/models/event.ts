@@ -3,6 +3,7 @@ import { Member } from "./member";
 import { Reward } from "./reward";
 
 export interface Event {
+    slug: string;
     name: string;
     date: Date;
     location: string;
