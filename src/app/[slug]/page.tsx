@@ -63,8 +63,8 @@ export default function Home({ params }: { params: { slug: string } }) {
         <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
           Notre projet
         </h3>
-        <div className="flex max-lg:flex-col gap-4">
-          <div className="lg:w-2/3 gap-y-4 flex flex-col">
+        <div className="flex max-xl:flex-col gap-4">
+          <div className="xl:w-2/3 gap-y-4 flex flex-col">
             <div>
               <p className="text-slate-600 dark:text-slate-400">
                 {article.description}
@@ -91,7 +91,7 @@ export default function Home({ params }: { params: { slug: string } }) {
               </p>
             </div>
           </div>
-          <div className="flex flex-col lg:w-1/3">
+          <div className="flex flex-col xl:w-1/3">
             <ImageSlider />
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function Home({ params }: { params: { slug: string } }) {
         <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
           L&apos;équipe
         </h3>
-        <div className="grid grid-cols-2md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
           {article.members.map((member, index) => (
             <MemberComponent key={index} {...member} />
           ))}

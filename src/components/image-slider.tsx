@@ -61,7 +61,7 @@ export default function ImageSlider() {
   const images = [Rts2021, Rts2022];
 
   return (
-    <div className="navigation-wrapper relative mr-10">
+    <div className="navigation-wrapper relative">
       <div ref={sliderRef} className="keen-slider">
         {images.map((image, index) => (
           <div
