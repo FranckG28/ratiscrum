@@ -10,3 +10,7 @@ export const displayDate = (date: Date): string => {
 export const capitalize = (str: string): string => {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+export const prettifyUrl = (url: string): string => {
+    return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0];
+}

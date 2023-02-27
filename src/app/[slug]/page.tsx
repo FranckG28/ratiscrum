@@ -6,7 +6,7 @@ import Gallery from "@/components/gallery";
 import MemberComponent from "@/components/member";
 import YouTube from "@/components/youtube";
 import { contentList } from "@/content/content-list";
-import { capitalize, displayDate } from "@/services/utils";
+import { capitalize, displayDate, prettifyUrl } from "@/services/utils";
 
 export default function Home({ params }: { params: { slug: string } }) {
 
@@ -78,13 +78,13 @@ export default function Home({ params }: { params: { slug: string } }) {
               {article.projectLink && (
                 <Button style="flat" href={article.projectLink}>
                   <LinkIcon size={20} />
-                  {article.projectLink}
+                  {prettifyUrl(article.projectLink)}
                 </Button>
               )}
               {article.sourceLink && (
                 <Button style="flat" href={article.sourceLink}>
                   <Code2 size={20} />
-                  {article.sourceLink}
+                  {prettifyUrl(article.sourceLink)}
                 </Button>
               )}
             </div>
