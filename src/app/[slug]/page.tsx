@@ -86,7 +86,9 @@ export default function Home({ params }: { params: { slug: string } }) {
               <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200 tracking-tight">
                 Technologies utilisés
               </h4>
-              <p className="text-slate-600 dark:text-slate-400">{article.technologies}</p>
+              <p className="text-slate-600 dark:text-slate-400">
+                {article.technologies.join(", ")}
+              </p>
             </div>
           </div>
           <div className="flex flex-col lg:w-1/3">
