@@ -92,7 +92,7 @@ export default function Home({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <div className="flex flex-col xl:w-1/3">
-            <ImageSlider />
+            {article.projectCarousel.length > 0 && <ImageSlider images={article.projectCarousel} />}
           </div>
         </div>
       </section>

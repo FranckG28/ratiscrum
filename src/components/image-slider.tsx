@@ -3,11 +3,13 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import Image from "next/image";
-import Rts2021 from "@/assets/rts2021.jpg";
-import Rts2022 from "@/assets/rts2022.jpg";
+import Image, { StaticImageData } from "next/image";
 
-export default function ImageSlider() {
+export default function ImageSlider({
+  images,
+}: {
+  images: StaticImageData[];
+}) {
   const AUTO_SLIDE_INTERVAL = 4000;
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -57,8 +59,6 @@ export default function ImageSlider() {
       },
     ]
   );
-
-  const images = [Rts2021, Rts2022];
 
   return (
     <div className="navigation-wrapper relative">

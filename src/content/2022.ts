@@ -1,5 +1,6 @@
 import { Event } from "@/models/event";
 import Rts2022 from "@/assets/rts2022.jpg";
+import Rts2021 from "@/assets/rts2021.jpg";
 
 export const event2022: Event = {
     slug: "ndli-2022",
@@ -35,7 +36,9 @@ export const event2022: Event = {
         }
     ],
     projectCarousel: [
+        Rts2021, Rts2022
     ],
     album: [
+        Rts2021, Rts2022
     ]
 };
