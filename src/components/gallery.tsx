@@ -5,12 +5,11 @@ import "react-medium-image-zoom/dist/styles.css";
 
 export default function Gallery({ images }: { images: StaticImageData[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 w-full h-52">
       {images.map((photo, index) => (
         <Zoom key={"zoom" + index}>
           <Image
-            width={300}
-            height={175}
+            fill
             key={index}
             src={photo.src}
             alt={"Photo " + index}
