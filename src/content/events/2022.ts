@@ -2,6 +2,13 @@ import { Event } from "@/models/event";
 import Rts2022 from "@/assets/rts2022.jpg";
 import Rts2021 from "@/assets/rts2021.jpg";
 import { franckG } from "../members/franck-g";
+import { damienD } from "../members/Damien-d";
+import { antoineT } from "../members/antoine-t";
+import { julienVDM } from "../members/julien-vdm";
+import { raffaelDP } from "../members/raffael-dp";
+import { rodrigueH } from "../members/rodrigue-h";
+import { sofianeM } from "../members/sofiane-m";
+import { tanguyG } from "../members/tanguy-g";
 
 export const event2022: Event = {
     slug: "ndli-2022",
@@ -16,13 +23,34 @@ export const event2022: Event = {
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/start",
     sourceLink: "https://github.com/Ratiscrum-V2/rts-app",
     videoId: "W8-KJPoo4uw",
-    members: Array(8).fill(franckG),
+    members: [
+        damienD,
+        franckG,
+        raffaelDP,
+        julienVDM,
+        tanguyG,
+        antoineT,
+        rodrigueH,
+        sofianeM,
+    ],
     rewards: [
         {
             rank: 1,
             title: "VEGA CS GROUP",
             description: "1500€",
             url: "https://www.nuitdelinfo.com/inscription/defis/176",
+        },
+        {
+            rank: 1,
+            title: "AIRBUS",
+            description: "500€ Illicado + visite des salles blanches d'intégration satellite à Toulouse",
+            url: "https://www.nuitdelinfo.com/inscription/defis/375",
+        },
+        {
+            rank: 2,
+            title: "Nuit de l'info",
+            description: "Sujet national dévoilé au lancement de la nuit",
+            url: "https://www.nuitdelinfo.com/inscription/defis/174",
         }
     ],
     projectCarousel: [
