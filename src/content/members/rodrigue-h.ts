@@ -1,11 +1,9 @@
-import Rts2022 from "@/assets/rts2022.jpg";
+import ratAvatar from "@/assets/avatar/rat.png";
 import { Member } from "@/models/member";
 
 export const rodrigueH: Member = {
     name: "Rodrigue HORNY",
     role: "A méditer",
-    avatar: Rts2022,
-    links: [
-        
-    ],
+    avatar: ratAvatar,
+    links: [],
 }

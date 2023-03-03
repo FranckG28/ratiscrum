@@ -2,7 +2,7 @@ import { Event } from "@/models/event";
 import Rts2022 from "@/assets/rts2022.jpg";
 import Rts2021 from "@/assets/rts2021.jpg";
 import { franckG } from "../members/franck-g";
-import { damienD } from "../members/Damien-d";
+import { damienD } from "../members/damien-d";
 import { antoineT } from "../members/antoine-t";
 import { julienVDM } from "../members/julien-vdm";
 import { raffaelDP } from "../members/raffael-dp";
