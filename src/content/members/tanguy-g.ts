@@ -1,10 +1,10 @@
-import ratAvatar from "@/assets/avatar/rat.png";
+import tanguyGAvatar from "@/assets/avatar/tanguyG.jpg";
 import { Member } from "@/models/member";
 
 export const tanguyG: Member = {
     name: "Tanguy Gimenez",
     role: "Back end",
-    avatar: ratAvatar,
+    avatar: tanguyGAvatar,
     links: [
         {
             name: "GitHub",

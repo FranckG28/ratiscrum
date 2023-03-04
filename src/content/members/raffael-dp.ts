@@ -1,10 +1,10 @@
-import ratAvatar from "@/assets/avatar/rat.png";
+import raffaelDPAvatar from "@/assets/avatar/raffaelDP.jpg";
 import { Member } from "@/models/member";
 
 export const raffaelDP: Member = {
     name: "Raffael Di Pietro",
     role: "Front end",
-    avatar: ratAvatar,
+    avatar: raffaelDPAvatar,
     links: [
         {
             name: "GitHub",

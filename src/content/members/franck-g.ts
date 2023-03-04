@@ -1,10 +1,10 @@
-import ratAvatar from "@/assets/avatar/rat.png";
+import franckGAvatar from "@/assets/avatar/franckG.jpg";
 import { Member } from "@/models/member";
 
 export const franckG: Member = {
     name: "Franck GUTMANN",
     role: "Front end et vidéo",
-    avatar: ratAvatar,
+    avatar: franckGAvatar,
     links: [
         {
             name: "GitHub",

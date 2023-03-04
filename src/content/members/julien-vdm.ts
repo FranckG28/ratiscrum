@@ -1,10 +1,10 @@
-import ratAvatar from "@/assets/avatar/rat.png";
+import julienVDMAvatar from "@/assets/avatar/julienVDM.jpg";
 import { Member } from "@/models/member";
 
 export const julienVDM: Member = {
     name: "Julien Von Der Mark",
     role: "Back end",
-    avatar: ratAvatar,
+    avatar: julienVDMAvatar,
     links: [
         {
             name: "GitHub",
