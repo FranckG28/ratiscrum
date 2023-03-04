@@ -3,7 +3,7 @@ import { Member } from "@/models/member";
 
 export const sofianeM: Member = {
     name: "Sofiane MANSOURI",
-    role: "A méditer",
+    role: "Vidéo",
     avatar: ratAvatar,
     links: [
         {
