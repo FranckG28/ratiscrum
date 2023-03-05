@@ -11,6 +11,7 @@ import NavItemComponent from "@/components/nav-item";
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { Menu } from "lucide-react";
 import { useOnClickOutside } from "usehooks-ts";
+import useScroll from "@/hooks/use-scroll";
 
 export default function Sidebar() {
   const theme = useContext(ThemeContext);
@@ -19,14 +20,19 @@ export default function Sidebar() {
 
   const ref = useRef(null);
   useOnClickOutside(ref, () => { setIsOpen(false) });
+  const scrolled = useScroll(50);
 
   return (
     <div ref={ref}>
-      <div className="z-50 fixed w-full bg-slate-200/60 dark:bg-slate-800/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 flex items-center lg:-translate-y-full transition-all">
+      <div className={`z-50 fixed w-full flex items-center lg:-translate-y-full transition-all duration-500 ease-in-out 
+      ${scrolled
+          ? 'bg-slate-200/60 dark:bg-slate-900/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 shadow-xl'
+          : 'bg-white/0 border-white/0 shadow-none'}
+      `}>
         <button className="group p-4 hover:bg-slate-300 hover:dark:bg-white/20 transition-all" onClick={() => { setIsOpen(!isOpen) }}>
           <Menu className="dark:text-white text-slate-800 group-active:scale-90 transition" />
         </button>
-        <Link href={"/"} onClick={() => { if (isOpen) setIsOpen(false) }}>
+        <Link href={"/"} onClick={() => { setIsOpen(false) }}>
           <Image src={RatiscrumLogo} alt="Ratiscrum Logo" width={120} />
         </Link>
       </div>
@@ -37,8 +43,8 @@ export default function Sidebar() {
         max-lg:bg-slate-200/90 max-lg:dark:bg-slate-800/90 max-lg:backdrop-blur-lg
         border-r dark:border-slate-700 border-slate-300 
         shadow-lg transition z-40
-        p-5 w-72 h-full
-        max-lg:h-full max-lg:fixed max-lg:pt-20
+        p-5 w-72 h-full fixed 
+        max-lg:pt-20
         ${isOpen ? '' : 'max-lg:-translate-x-full'}
       `}>
         <Link className="w-48 max-lg:hidden" href={"/"}>
@@ -47,7 +53,7 @@ export default function Sidebar() {
         {contentList.map((item, index) => (
           <button
             key={index}
-            onClick={() => { if (isOpen) setIsOpen(false) }}
+            onClick={() => { setIsOpen(false) }}
           >
             <NavItemComponent
               title={item.name}
