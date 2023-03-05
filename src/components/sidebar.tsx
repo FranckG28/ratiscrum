@@ -18,8 +18,11 @@ export default function Sidebar() {
 
   return (
     <>
-
-      <button onClick={() => { setIsOpen(!isOpen) }} className="rounded-xl p-3 hover:bg-white/20 transition-all absolute lg:hidden z-30 top-2 left-2"><Menu className="text-white" /></button>
+      <div className="z-30 lg:hidden fixed w-full p-1 bg-slate-800/70 backdrop-blur-md border-b border-slate-700">
+        <button onClick={() => { setIsOpen(!isOpen) }} className="rounded-xl p-3 hover:bg-white/20 transition-all">
+          <Menu className="text-white" />
+        </button>
+      </div>
 
       <nav className={`
         flex flex-col 
