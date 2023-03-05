@@ -22,7 +22,7 @@ export default function Sidebar() {
         <button onClick={() => { setIsOpen(!isOpen) }} className="rounded-xl p-3 hover:bg-slate-300 hover:dark:bg-white/20 transition-all m-1">
           <Menu className="dark:text-white text-slate-800" />
         </button>
-        <Link href={"/"}>
+        <Link href={"/"} onClick={() => { if (isOpen) setIsOpen(false) }}>
           <Image src={RatiscrumLogo} alt="Ratiscrum Logo" width={120} />
         </Link>
       </div>
@@ -41,14 +41,18 @@ export default function Sidebar() {
           <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
         </Link>
         {contentList.map((item, index) => (
-          <NavItemComponent
+          <button
             key={index}
-            title={item.name}
-            subtitle={capitalize(displayDate(item.date))}
-            info={`${item.rewards.length} récompenses`}
-            url={`/${item.slug}`}
-            isActive={segment === item.slug}
-          />
+            onClick={() => { if (isOpen) setIsOpen(false) }}
+          >
+            <NavItemComponent
+              title={item.name}
+              subtitle={capitalize(displayDate(item.date))}
+              info={`${item.rewards.length} récompenses`}
+              url={`/${item.slug}`}
+              isActive={segment === item.slug}
+            />
+          </button>
         ))}
         {/* <button
         onClick={() => {
