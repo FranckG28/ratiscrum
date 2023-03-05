@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`h-full ${font.variable} antialiased dark`}>
+    <html lang="en" className={`h-full ${font.variable} antialiased`}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -26,7 +26,7 @@ export default function RootLayout({
           <Sidebar />
 
           <main className="flex-1 overflow-auto">
-            <div className="mx-auto max-w-6xl py-8 px-8">{children}</div>
+            <div className="mx-auto max-w-6xl py-8 px-8 max-lg:pt-20">{children}</div>
 
             <footer className="py-2 border-t border-slate-500/20">
               <p className="text-center text-slate-500 text-sm">

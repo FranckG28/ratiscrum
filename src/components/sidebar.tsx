@@ -18,20 +18,26 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="z-30 lg:hidden fixed w-full p-1 bg-slate-800/70 backdrop-blur-md border-b border-slate-700">
-        <button onClick={() => { setIsOpen(!isOpen) }} className="rounded-xl p-3 hover:bg-white/20 transition-all">
-          <Menu className="text-white" />
+      <div className="z-30 lg:hidden fixed w-full bg-slate-200/80 dark:bg-slate-800/70 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 flex items-center">
+        <button onClick={() => { setIsOpen(!isOpen) }} className="rounded-xl p-3 hover:bg-white/20 transition-all m-1">
+          <Menu className="dark:text-white text-slate-500" />
         </button>
+        <Link href={"/"}>
+          <Image src={RatiscrumLogo} alt="Ratiscrum Logo" width={120} />
+        </Link>
       </div>
 
       <nav className={`
-        flex flex-col 
-        bg-slate-200 dark:bg-slate-800 border-r gap-3 dark:border-slate-700 border-slate-300 shadow-lg 
+        flex flex-col gap-3
+        bg-slate-200 dark:bg-slate-800 
+        max-lg:bg-slate-200/80 max-lg:dark:bg-slate-800/70 max-lg:backdrop-blur-lg
+        border-r dark:border-slate-700 border-slate-300 
+        shadow-lg transition
         p-5 w-72 
-        max-lg:h-full max-lg:fixed transition
+        max-lg:h-full max-lg:fixed max-lg:pt-20
         ${isOpen ? '' : 'max-lg:-translate-x-full'}
       `}>
-        <Link className="w-48" href={"/"}>
+        <Link className="w-48 max-lg:hidden" href={"/"}>
           <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
         </Link>
         {contentList.map((item, index) => (
