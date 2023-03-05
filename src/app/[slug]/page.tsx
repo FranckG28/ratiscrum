@@ -19,11 +19,11 @@ export default function EventPage({ params }: { params: { slug: string } }) {
 
       <section className="flex max-xl:flex-col lg:justify-between my-1">
 
-        <div>
-          <h1 className="text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter leading-snug">
+        <div className="max-lg:flex max-lg:flex-col max-lg:gap-3">
+          <h1 className="text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter lg:leading-snug">
             {article.name}
           </h1>
-          <p className="text-slate-800 dark:text-slate-300 inline-flex gap-4">
+          <p className="text-slate-800 dark:text-slate-300 inline-flex gap-4 max-lg:leading-5">
             {capitalize(displayDate(article.date))}, {article.location}
           </p>
         </div>
