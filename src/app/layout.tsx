@@ -22,7 +22,7 @@ export default function RootLayout({
       */}
       <head />
       <ThemeProvider>
-        <body className="bg-slate-100 dark:bg-slate-900 flex w-screen">
+        <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
           <Sidebar />
 
           <main className="flex-1 overflow-x-hidden">
