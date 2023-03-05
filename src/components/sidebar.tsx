@@ -38,39 +38,40 @@ export default function Sidebar() {
       </div>
 
       <nav className={`
-        flex flex-col gap-3
         bg-slate-200 dark:bg-slate-800 
         max-lg:bg-slate-200/90 max-lg:dark:bg-slate-800/90 max-lg:backdrop-blur-lg
         border-r dark:border-slate-700 border-slate-300 
-        shadow-lg transition z-40
-        p-5 w-72 h-full fixed 
-        max-lg:pt-20
+        shadow-lg transition duration-300 z-40
+        w-72 h-full max-lg:fixed 
+        max-lg:pt-14
         ${isOpen ? '' : 'max-lg:-translate-x-full'}
       `}>
-        <Link className="w-48 max-lg:hidden" href={"/"}>
-          <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
-        </Link>
-        {contentList.map((item, index) => (
-          <button
-            key={index}
-            onClick={() => { setIsOpen(false) }}
-          >
-            <NavItemComponent
-              title={item.name}
-              subtitle={capitalize(displayDate(item.date))}
-              info={`${item.rewards.length} récompenses`}
-              url={`/${item.slug}`}
-              isActive={segment === item.slug}
-            />
-          </button>
-        ))}
-        {/* <button
-        onClick={() => {
-          setTheme(theme === "dark" ? "light" : "dark");
-        }}
-      >
-        {theme}
-      </button> */}
+        <div className="fixed flex flex-col gap-3 p-5 w-72">
+          <Link className="w-48 max-lg:hidden" href={"/"}>
+            <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
+          </Link>
+          {contentList.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => { setIsOpen(false) }}
+            >
+              <NavItemComponent
+                title={item.name}
+                subtitle={capitalize(displayDate(item.date))}
+                info={`${item.rewards.length} récompenses`}
+                url={`/${item.slug}`}
+                isActive={segment === item.slug}
+              />
+            </button>
+          ))}
+          {/* <button
+          onClick={() => {
+            setTheme(theme === "dark" ? "light" : "dark");
+          }}
+        >
+          {theme}
+        </button> */}
+        </div>
       </nav>
 
     </div>
