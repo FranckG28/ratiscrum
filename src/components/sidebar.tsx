@@ -22,7 +22,7 @@ export default function Sidebar() {
 
   return (
     <div ref={ref}>
-      <div className="z-50 lg:hidden fixed w-full bg-slate-200/60 dark:bg-slate-800/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 flex items-center">
+      <div className="z-50 fixed w-full bg-slate-200/60 dark:bg-slate-800/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 flex items-center lg:-translate-y-full transition-all">
         <button className="group p-4 hover:bg-slate-300 hover:dark:bg-white/20 transition-all" onClick={() => { setIsOpen(!isOpen) }}>
           <Menu className="dark:text-white text-slate-800 group-active:scale-90 transition" />
         </button>
