@@ -7,7 +7,7 @@ export default function RewardComponent({ rank, title, description, url }: Rewar
   return (
     <Link
       href={url}
-      className="flex gap-2 items-center p-3 transition hover:bg-slate-300/20 dark:hover:bg-slate-700/40 duration-75 rounded-xl"
+      className="flex gap-2 items-center p-3 transition hover:bg-slate-300/20 dark:hover:bg-slate-700/40 duration-75 rounded-xl active:scale-95"
     >
       <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-300/50 border border-slate-400/20 dark:bg-slate-700/50">
         <p className="text-slate-800 dark:text-white text-xl font-medium">

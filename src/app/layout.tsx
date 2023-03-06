@@ -22,11 +22,11 @@ export default function RootLayout({
       */}
       <head />
       <ThemeProvider>
-        <body className="bg-slate-100 dark:bg-slate-900 flex h-full overflow-hidden">
+        <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
           <Sidebar />
 
-          <main className="flex-1 overflow-auto">
-            <div className="mx-auto max-w-6xl py-8 px-8">{children}</div>
+          <main className="flex-1 overflow-x-hidden">
+            <div className="mx-auto max-w-6xl py-8 px-8 max-lg:pt-20">{children}</div>
 
             <footer className="py-2 border-t border-slate-500/20">
               <p className="text-center text-slate-500 text-sm">
