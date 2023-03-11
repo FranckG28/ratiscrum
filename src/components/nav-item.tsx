@@ -6,7 +6,7 @@ export default function NavItemComponent(props: NavItem) {
     return (
         <Link
             href={props.url}
-            className={`relative flex flex-col px-5 py-4 rounded-lg ${props.isActive
+            className={`relative flex flex-col px-5 py-4 rounded-lg text-start active:scale-95 transition-all ${props.isActive
                 ? "dark:bg-slate-700 bg-slate-300"
                 : "hover:bg-slate-500/5 dark:hover:bg-slate-400/5"
                 }`}
