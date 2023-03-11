@@ -28,7 +28,7 @@ export default function RootLayout({
           <main className="flex-1 overflow-auto">
             <div className="mx-auto max-w-6xl py-8 px-8">{children}</div>
 
-            <footer className="py-2 border-t border-slate-500/20">
+            <footer className="py-3 border-t border-slate-500/20">
               <p className="text-center text-slate-500 text-sm">
                 © Ratiscrum 🐀 - {new Date().getFullYear()}
               </p>
