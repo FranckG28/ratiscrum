@@ -53,7 +53,7 @@ export const event2022: Event = {
         },
         {
             rank: 1,
-            title: "AIRBUS",
+            title: "THE AIRBUS X PRIZE",
             description: "500€ Illicado + visite des salles blanches d'intégration satellite à Toulouse",
             url: "https://www.nuitdelinfo.com/inscription/defis/375",
         },

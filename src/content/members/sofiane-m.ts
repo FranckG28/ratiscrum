@@ -2,7 +2,7 @@ import ratAvatar from "@/assets/avatar/rat.png";
 import { Member } from "@/models/member";
 
 export const sofianeM: Member = {
-    name: "Sofiane MANSOURI",
+    name: "Sofiane Mansouri",
     role: "Vidéo",
     avatar: ratAvatar,
     links: [

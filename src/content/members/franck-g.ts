@@ -2,7 +2,7 @@ import franckGAvatar from "@/assets/avatar/franckG.jpg";
 import { Member } from "@/models/member";
 
 export const franckG: Member = {
-    name: "Franck GUTMANN",
+    name: "Franck Gutmann",
     role: "Front end et vidéo",
     avatar: franckGAvatar,
     links: [
