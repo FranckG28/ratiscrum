@@ -19,7 +19,7 @@ export default function MemberComponent({ name, role, avatar, links }: Member) {
         src={avatar}
         width={75}
         height={75}
-        className="rounded-full border border-slate-300/20 my-2 aspect-square"
+        className="rounded-full border border-slate-300/20 my-2 aspect-square object-cover"
         alt={name}
       />
       <p className="text-slate-800 dark:text-white text-lg font-medium leading-4">
