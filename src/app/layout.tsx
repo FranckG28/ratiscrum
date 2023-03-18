@@ -1,7 +1,7 @@
 import Sidebar from "@/components/sidebar";
 import "./globals.css";
 import localFont from "@next/font/local";
-import ThemeProvider from "@/components/theme-provider";
+import Providers from "@/components/providers";
 
 const font = localFont({
   src: "../../public/fonts/Switzer-Variable.woff2",
@@ -15,18 +15,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`h-full ${font.variable} antialiased dark`}>
+    <html
+      lang="en"
+      className={`h-full ${font.variable} antialiased`}
+      suppressHydrationWarning
+    >
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <ThemeProvider>
-        <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
+      <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
+        <Providers>
           <Sidebar />
 
           <main className="flex-1 overflow-x-hidden">
-            <div className="mx-auto max-w-6xl py-8 px-8 max-lg:pt-20">{children}</div>
+            <div className="mx-auto max-w-6xl py-8 px-8 max-lg:pt-20">
+              {children}
+            </div>
 
             <footer className="py-3 border-t border-slate-500/20">
               <p className="text-center text-slate-500 text-sm">
@@ -34,8 +40,8 @@ export default function RootLayout({
               </p>
             </footer>
           </main>
-        </body>
-      </ThemeProvider>
+        </Providers>
+      </body>
     </html>
   );
 }

@@ -1,7 +1,13 @@
 import Button from "@/components/button";
 import RewardComponent from "@/components/reward";
 import ImageSlider from "@/components/image-slider";
-import { ExternalLink, Medal, Link as LinkIcon, Code2, MapPin } from "lucide-react";
+import {
+  ExternalLink,
+  Medal,
+  Link as LinkIcon,
+  Code2,
+  MapPin,
+} from "lucide-react";
 import Gallery from "@/components/gallery";
 import MemberComponent from "@/components/member";
 import YouTube from "@/components/youtube";
@@ -9,16 +15,15 @@ import { contentList } from "@/content/content-list";
 import { capitalize, displayDate, prettifyUrl } from "@/services/utils";
 
 export default function EventPage({ params }: { params: { slug: string } }) {
-
-  const article = contentList.find((article) => article.slug === params.slug) || contentList[0];
+  const article =
+    contentList.find((article) => article.slug === params.slug) ||
+    contentList[0];
 
   return (
     <div className="flex flex-col gap-6">
-
       {article.videoId && <YouTube videoId={article.videoId} />}
 
       <section className="flex max-xl:flex-col lg:justify-between my-1">
-
         <div className="max-lg:flex max-lg:flex-col max-lg:gap-3">
           <h1 className="text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter lg:leading-snug">
             {article.name}
@@ -35,7 +40,11 @@ export default function EventPage({ params }: { params: { slug: string } }) {
             </Button>
           )}
           {article.eventLink && (
-            <Button style="flat" href={article.eventLink} className="px-4 xl:order-first">
+            <Button
+              style="flat"
+              href={article.eventLink}
+              className="px-4 xl:order-first"
+            >
               Site officiel
             </Button>
           )}
@@ -87,10 +96,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
                   </Button>
                 )}
               </div>
-
-
             </div>
-
 
             {article.technologies.length > 0 && (
               <div>
@@ -104,7 +110,9 @@ export default function EventPage({ params }: { params: { slug: string } }) {
             )}
           </div>
           <div className="flex flex-col xl:w-1/3">
-            {article.projectCarousel.length > 0 && <ImageSlider images={article.projectCarousel} />}
+            {article.projectCarousel.length > 0 && (
+              <ImageSlider images={article.projectCarousel} />
+            )}
           </div>
         </div>
       </section>
@@ -119,7 +127,8 @@ export default function EventPage({ params }: { params: { slug: string } }) {
               <MemberComponent key={index} {...member} />
             ))}
           </div>
-        </section>)}
+        </section>
+      )}
 
       {article.album.length > 0 && (
         <section className="flex flex-col gap-2">
