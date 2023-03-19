@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import RatiscrumLogo from "/public/rts-logo.png";
-import { useCallback, useContext, useRef, useState } from "react";
+import { useRef } from "react";
 import { contentList } from "@/content/content-list";
 import { capitalize, displayDate } from "@/services/utils";
 import NavItemComponent from "@/components/nav-item";
@@ -12,6 +11,7 @@ import { Menu } from "lucide-react";
 import { useBoolean, useOnClickOutside } from "usehooks-ts";
 import useScroll from "@/hooks/use-scroll";
 import SwitchTheme from "./switch-theme";
+import RatiscrumLogo from "./ratiscrum-logo";
 
 export default function Sidebar() {
   const segment = useSelectedLayoutSegment();
@@ -29,11 +29,10 @@ export default function Sidebar() {
       <div
         ref={ref}
         className={`z-50 fixed w-full flex items-center lg:-translate-y-full transition-all duration-500 ease-in-out 
-      ${
-        scrolled
-          ? "bg-slate-200/60 dark:bg-slate-900/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 shadow-xl"
-          : "bg-white/0 border-white/0 shadow-none"
-      }
+      ${scrolled
+            ? "bg-slate-200/60 dark:bg-slate-900/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 shadow-xl"
+            : "bg-white/0 border-white/0 shadow-none"
+          }
       `}
       >
         <button
@@ -43,7 +42,7 @@ export default function Sidebar() {
           <Menu className="dark:text-white text-slate-800 group-active:scale-90 transition" />
         </button>
         <Link href={"/"} onClick={setFalse}>
-          <Image src={RatiscrumLogo} alt="Ratiscrum Logo" width={120} />
+          <RatiscrumLogo width={120} />
         </Link>
       </div>
 
@@ -61,7 +60,7 @@ export default function Sidebar() {
         <div className="flex items-center justify-between flex-col">
           <div className="fixed flex flex-col gap-3 p-5 w-72">
             <Link className="w-48 max-lg:hidden" href={"/"}>
-              <Image src={RatiscrumLogo} alt="Ratiscrum Logo" />
+              <RatiscrumLogo />
             </Link>
             {contentList.map((item, index) => (
               <NavItemComponent
