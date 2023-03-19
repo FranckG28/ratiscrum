@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -25,9 +24,8 @@ export default function SwitchTheme() {
   return (
     <div
       onClick={toggleSwitch}
-      className={`flex-start flex h-[50px] w-[100px] rounded-[50px] bg-zinc-100 p-[5px] shadow-inner hover:cursor-pointer dark:bg-slate-700/50 ${
-        theme === "light" && "place-content-end"
-      }`}
+      className={`flex-start flex h-[50px] w-[100px] rounded-[50px] bg-zinc-100 p-[5px] shadow-inner hover:cursor-pointer dark:bg-slate-700/50 ${theme === "light" && "place-content-end"
+        }`}
     >
       <motion.div
         className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black/70"
