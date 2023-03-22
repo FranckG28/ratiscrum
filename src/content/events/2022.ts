@@ -1,5 +1,4 @@
 import { Event } from "@/models/event";
-import Rts2022 from "@/assets/rts2022.jpg";
 import Rts2021 from "@/assets/rts2021.jpg";
 import { franckG } from "../members/franck-g";
 import { damienD } from "../members/damien-d";
@@ -65,9 +64,9 @@ export const event2022: Event = {
         }
     ],
     projectCarousel: [
-        Rts2021, Rts2022
+        Rts2021,
     ],
     album: [
-        Rts2021, Rts2022
+        Rts2021,
     ]
 };
