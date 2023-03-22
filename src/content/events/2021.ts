@@ -1,7 +1,13 @@
 import { Event } from "@/models/event";
 import Rts2021 from "@/assets/rts2021.jpg";
-import Rts2022 from "@/assets/rts2022.jpg";
 import { franckG } from "../members/franck-g";
+import { damienD } from "../members/damien-d";
+import { julienVDM } from "../members/julien-vdm";
+import { sofianeM } from "../members/sofiane-m";
+import { rodrigueH } from "../members/rodrigue-h";
+import { antoineT } from "../members/antoine-t";
+import { erenC } from "../members/eren-c";
+import { antoineV } from "../members/antoine-v";
 
 export const event2021: Event = {
     slug: "ndli-2021",
@@ -9,14 +15,23 @@ export const event2021: Event = {
     date: new Date(2021, 12, 4),
     location: "IUT Robert Schuman, Illkirch Graffenstaden",
     description: `
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ornare massa vitae fermentum sagittis. Donec tortor massa, molestie ac nulla et, porta sagittis lacus. Donec semper risus in interdum sollicitudin. Morbi ut ipsum a metus aliquam tristique. Etiam mauris velit, condimentum a lobortis id, vestibulum nec urna. Sed quis imperdiet orci, vel feugiat mauris. Aenean tincidunt est in viverra ullamcorper. Nulla eget consequat tortor, eu volutpat mi. Curabitur consectetur rhoncus ex, id posuere velit placerat et. Etiam at varius dolor. Proin venenatis orci sed lacinia vulputate.
+    Cette année, le sujet a été élaboré par la station de Dunkerque de la Société Nationale de Sauvegarde en Mer (SNSM) et s’intitulait « L’informatique à l’aide de l’histoire des sauvetages en mer ». L'objectif était de créer un site communautaire repertoriant toutes les informations sur les sauvetages en mer. Les membres de la communauté pourront ajouter des informations sur les sauvetages, les bateaux, les sauvés ... 
     `,
     technologies: ["Laravel"],
     projectLink: "https://ndli.depret.net/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/editions_precedentes:2021",
     sourceLink: "",
     videoId: "PxYjpuAVBN8",
-    members: Array(8).fill(franckG),
+    members: [
+        damienD,
+        franckG,
+        julienVDM,
+        sofianeM,
+        rodrigueH,
+        antoineT,
+        erenC,
+        antoineV,
+    ],
     rewards: [
         {
             rank: 1,
@@ -26,9 +41,9 @@ export const event2021: Event = {
         }
     ],
     projectCarousel: [
-        Rts2021, Rts2022
+        Rts2021
     ],
     album: [
-        Rts2021, Rts2022
+        Rts2021
     ]
 };
