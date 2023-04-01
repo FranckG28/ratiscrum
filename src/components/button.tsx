@@ -16,6 +16,7 @@ export default function Button({
   return (
     <Link
       href={href}
+      target="_blank"
       className={`transition-all rounded-lg flex gap-2 items-center font-medium active:scale-95 ${buttonStyle[style]} ${className}`}
     >
       {children}

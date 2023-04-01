@@ -1,4 +1,4 @@
-![Ratiscrum logo](https://ratiscrum.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frts-logo.8baa3ea0.png&w=828&q=75)
+![Ratiscrum Logo](https://raw.githubusercontent.com/FranckG28/Ratiscrum/main/public/rts-logo.png)
 
 Homepage for the Ratiscrum team, with projects, members, videos, rewards and gallery. [Visit >](https://ratiscrum.vercel.app)
 
