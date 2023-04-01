@@ -1,7 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import "react-medium-image-zoom/dist/styles.css";
 
 export default function Gallery({ images }: { images: StaticImageData[] }) {
   return (
