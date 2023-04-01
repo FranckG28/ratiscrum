@@ -1,10 +1,10 @@
-import ratAvatar from "@/assets/avatar/rat.png";
+import sofianeMAvatar from "@/assets/avatar/sofianeM.jpg";
 import { Member } from "@/models/member";
 
 export const sofianeM: Member = {
     name: "Sofiane Mansouri",
     role: "Vidéo",
-    avatar: ratAvatar,
+    avatar: sofianeMAvatar,
     links: [
         {
             name: "Linkedin",

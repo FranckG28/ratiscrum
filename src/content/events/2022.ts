@@ -45,13 +45,13 @@ export const event2022: Event = {
     videoId: "W8-KJPoo4uw",
     members: [
         damienD,
-        franckG,
         raffaelDP,
-        julienVDM,
+        franckG,
         tanguyG,
-        antoineT,
         rodrigueH,
         sofianeM,
+        antoineT,
+        julienVDM,
     ],
     rewards: [
         {

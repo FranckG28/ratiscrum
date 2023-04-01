@@ -23,14 +23,14 @@ export const event2021: Event = {
     sourceLink: "",
     videoId: "PxYjpuAVBN8",
     members: [
+        erenC,
         damienD,
         franckG,
-        julienVDM,
-        sofianeM,
         rodrigueH,
+        sofianeM,
         antoineT,
-        erenC,
         antoineV,
+        julienVDM,
     ],
     rewards: [
         {
