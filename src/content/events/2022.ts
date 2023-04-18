@@ -39,7 +39,7 @@ export const event2022: Event = {
     sans qu'aucun de ces trois indicateurs ne finisse à zéro !
     `,
     technologies: ["React", "TailwindCSS", "Daisy UI"],
-    projectLink: "https://ratiscrum.tgimenez.fr/",
+    projectLink: "https://ratisexe.ratiscrum.fr/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/start",
     sourceLink: "https://github.com/Ratiscrum-V2/rts-app",
     videoId: "W8-KJPoo4uw",
