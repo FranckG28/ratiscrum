@@ -39,7 +39,7 @@ export const event2021: Event = {
     Cette année, le sujet a été élaboré par la station de Dunkerque de la Société Nationale de Sauvegarde en Mer (SNSM) et s'intitule « L’informatique à l’aide de l’histoire des sauvetages en mer ». L'objectif est de créer un site communautaire repertoriant toutes les informations sur les sauvetages en mer. Les membres de la communauté peuvent ensuite y ajouter de nouvelles informations sur les sauvetages, les bateaux, les sauvés, le tout avec un système de modération. 
     `,
     technologies: ["Laravel"],
-    projectLink: "https://ndli.depret.net/",
+    projectLink: "https://ndli2021.ratiscrum.fr/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/editions_precedentes:2021",
     sourceLink: "",
     videoId: "PxYjpuAVBN8",
