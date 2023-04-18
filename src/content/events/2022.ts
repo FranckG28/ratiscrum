@@ -1,5 +1,4 @@
 import { Event } from "@/models/event";
-import Rts2021 from "@/assets/rts2021.jpg";
 import { franckG } from "../members/franck-g";
 import { damienD } from "../members/damien-d";
 import { antoineT } from "../members/antoine-t";
@@ -8,6 +7,17 @@ import { raffaelDP } from "../members/raffael-dp";
 import { rodrigueH } from "../members/rodrigue-h";
 import { sofianeM } from "../members/sofiane-m";
 import { tanguyG } from "../members/tanguy-g";
+
+import Cheque1 from "@/assets/2022/gallery/cheque1.png";
+import Cheque2 from "@/assets/2022/gallery/cheque2.png";
+import Cheque3 from "@/assets/2022/gallery/cheque3.png";
+import Cheque4 from "@/assets/2022/gallery/cheque4.png";
+import IMG1 from "@/assets/2022/gallery/1.jpg";
+import IMG2 from "@/assets/2022/gallery/2.jpg";
+import IMG3 from "@/assets/2022/gallery/3.jpg";
+import IMG4 from "@/assets/2022/gallery/4.jpg";
+import IMG5 from "@/assets/2022/gallery/5.jpg";
+import IMG6 from "@/assets/2022/gallery/6.jpg";
 
 export const event2022: Event = {
     slug: "ndli-2022",
@@ -35,13 +45,13 @@ export const event2022: Event = {
     videoId: "W8-KJPoo4uw",
     members: [
         damienD,
-        franckG,
         raffaelDP,
-        julienVDM,
+        franckG,
         tanguyG,
-        antoineT,
         rodrigueH,
         sofianeM,
+        antoineT,
+        julienVDM,
     ],
     rewards: [
         {
@@ -64,9 +74,18 @@ export const event2022: Event = {
         }
     ],
     projectCarousel: [
-        Rts2021,
+        Cheque1,
     ],
     album: [
-        Rts2021,
+        Cheque1,
+        Cheque2,
+        Cheque3,
+        Cheque4,
+        IMG1,
+        IMG2,
+        IMG3,
+        IMG4,
+        IMG5,
+        IMG6,
     ]
 };

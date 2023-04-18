@@ -33,7 +33,7 @@ import Project4 from "@/assets/2021/project/4.png";
 export const event2021: Event = {
     slug: "ndli-2021",
     name: "Nuit de l'info 2021",
-    date: new Date(2021, 12, 4),
+    date: new Date(2021, 11, 4),
     location: "IUT Robert Schuman, Illkirch Graffenstaden",
     description: `
     Cette année, le sujet a été élaboré par la station de Dunkerque de la Société Nationale de Sauvegarde en Mer (SNSM) et s'intitule « L’informatique à l’aide de l’histoire des sauvetages en mer ». L'objectif est de créer un site communautaire repertoriant toutes les informations sur les sauvetages en mer. Les membres de la communauté peuvent ensuite y ajouter de nouvelles informations sur les sauvetages, les bateaux, les sauvés, le tout avec un système de modération. 
@@ -44,14 +44,14 @@ export const event2021: Event = {
     sourceLink: "",
     videoId: "PxYjpuAVBN8",
     members: [
+        erenC,
         damienD,
         franckG,
-        julienVDM,
-        sofianeM,
         rodrigueH,
+        sofianeM,
         antoineT,
-        erenC,
         antoineV,
+        julienVDM,
     ],
     rewards: [
         {

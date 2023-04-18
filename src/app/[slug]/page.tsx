@@ -29,7 +29,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
             {article.name}
           </h1>
           <p className="text-slate-800 dark:text-slate-300 inline-flex gap-4 max-lg:leading-5">
-            {capitalize(displayDate(article.date))}, {article.location}
+            {capitalize(displayDate(article.date, true))}, {article.location}
           </p>
         </div>
         <div className="flex items-center gap-4 py-3">
