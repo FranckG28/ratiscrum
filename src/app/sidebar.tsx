@@ -6,12 +6,12 @@ import { capitalize, displayDate } from "@/services/utils";
 import NavItemComponent from "@/components/nav-item";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { Menu } from "lucide-react";
-import { useBoolean, useOnClickOutside } from "usehooks-ts";
 import useScroll from "@/hooks/use-scroll";
 import SwitchTheme from "../components/switch-theme";
 import RatiscrumLogo from "../components/ratiscrum-logo";
-import { Event } from "@/models/event";
 import { contentList } from "@/content/content-list";
+import { useOnClickOutside } from "@/hooks/use-on-click-outside";
+import { useBoolean } from "@/hooks/use-boolean";
 
 export default function Sidebar() {
   const segment = useSelectedLayoutSegment();
