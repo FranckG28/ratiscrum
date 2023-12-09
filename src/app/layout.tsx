@@ -2,10 +2,9 @@ import Sidebar from "@/app/sidebar";
 import "./globals.css";
 import Providers from "@/components/providers";
 import localFont from "next/font/local";
-import { getAllSlugs } from "./actions/getAllSlugs";
-import getEventPreview from "./actions/getEventPreview";
 import { Metadata } from "next/types";
 import { appName, appUrl, description } from "./manifest";
+import getSortedEventPreviews from "./actions/getSortedEventPreviews";
 
 const font = localFont({
   src: "../../public/fonts/Switzer-Variable.woff2",
@@ -53,15 +52,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const slugs = await getAllSlugs();
-
-  if (!slugs) {
-    throw new Error("No slugs found");
-  }
-
-  const eventPreviews = await Promise.all(
-    slugs.map((slug) => getEventPreview(slug))
-  );
+  const previews = await getSortedEventPreviews();
 
   return (
     <html
@@ -72,13 +63,7 @@ export default async function RootLayout({
       <head />
       <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
         <Providers>
-          <Sidebar
-            events={eventPreviews
-              .map(({ event }) => event)
-              .sort((e1, e2) => {
-                return e2.date.getTime() - e1.date.getTime();
-              })}
-          />
+          <Sidebar events={previews} />
 
           <main className="flex-1 overflow-x-hidden">
             <div className="mx-auto max-w-6xl py-8 px-8 max-lg:pt-20">

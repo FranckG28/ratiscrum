@@ -1,12 +1,12 @@
 import { redirect } from "next/navigation";
-import { getAllSlugs } from "./actions/getAllSlugs";
+import getSortedEventPreviews from "./actions/getSortedEventPreviews";
 
 export async function GET(req: Request) {
-  const slugs = await getAllSlugs();
+  const eventsPreviews = await getSortedEventPreviews();
 
-  if (!slugs) {
+  if (!eventsPreviews || eventsPreviews.length === 0) {
     throw new Error("No events found");
   }
 
-  return redirect(`/${slugs[0]}`);
+  return redirect(`/${eventsPreviews[0].slug}`);
 }
