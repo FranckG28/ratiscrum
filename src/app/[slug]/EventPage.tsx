@@ -8,7 +8,11 @@ import { Event } from "@/models/event";
 import { capitalize, displayDate, prettifyUrl } from "@/services/utils";
 import { ExternalLink, Medal, LinkIcon, Code2 } from "lucide-react";
 
-export default function EventPage({ article }: { article: Event }) {
+export default function EventPage({
+  article,
+}: {
+  article: Event;
+}): JSX.Element {
   return (
     <div className="flex flex-col gap-6">
       {article.videoId && <YouTube videoId={article.videoId} />}
@@ -99,7 +103,7 @@ export default function EventPage({ article }: { article: Event }) {
               </div>
             )}
           </div>
-          <div className="flex flex-col xl:w-1/3">
+          <div className="flex flex-col xl:w-1/2">
             {article.projectCarousel.length > 0 && (
               <ImageSlider images={article.projectCarousel} />
             )}

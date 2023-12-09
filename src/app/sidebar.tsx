@@ -75,7 +75,7 @@ export default function Sidebar() {
                 />
               ))}
             </div>
-            <SwitchTheme className="bottom-0" />
+            {/* <SwitchTheme className="bottom-0" /> */}
           </div>
         </div>
       </nav>
