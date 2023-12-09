@@ -3,7 +3,7 @@
 import { contentList } from "@/content/content-list";
 import EventPage from "./EventPage";
 
-export async function getEvent(slug: string) {
+async function getEvent(slug: string) {
   const article = contentList.find((article) => article.slug === slug);
 
   if (!article) {

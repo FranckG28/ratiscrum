@@ -1,7 +1,7 @@
 import Sidebar from "@/app/sidebar";
 import "./globals.css";
-import localFont from "@next/font/local";
 import Providers from "@/components/providers";
+import localFont from "next/font/local";
 
 const font = localFont({
   src: "../../public/fonts/Switzer-Variable.woff2",
