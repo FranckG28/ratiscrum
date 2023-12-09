@@ -8,8 +8,6 @@ export async function getFileList(folderPath: string): Promise<string[]> {
 
     const dirContent = await fs.readdir(path.join(process.cwd(), folderPath));
 
-    console.log("dir content", dirContent);
-
     const files: string[] = [];
 
     for (const file of dirContent) {
