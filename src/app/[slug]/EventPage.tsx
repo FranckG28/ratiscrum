@@ -8,7 +8,6 @@ import YouTube from "@/components/youtube";
 import { Event } from "@/models/event";
 import { capitalize, displayDate, prettifyUrl } from "@/services/utils";
 import { ExternalLink, Medal, LinkIcon, Code2 } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote";
 
 export default function EventPage({
   article,
@@ -49,7 +48,7 @@ export default function EventPage({
         </div>
       </section>
 
-      {article.rewards.length > 0 && (
+      {article.rewards?.length > 0 && (
         <section className="flex rounded-lg flex-col border border-slate-500/50 gap-3 p-5">
           <p className="text-slate-800 dark:text-slate-300 flex gap-2 font-medium items-center">
             <Medal size={20} />
@@ -100,20 +99,20 @@ export default function EventPage({
                   Technologies utilisés
                 </h4>
                 <p className="text-slate-600 dark:text-slate-400">
-                  {article.technologies.join(", ")}
+                  {article.technologies}
                 </p>
               </div>
             )}
           </div>
           <div className="flex flex-col xl:w-1/2">
-            {article.projectCarousel.length > 0 && (
+            {article.projectCarousel?.length > 0 && (
               <ImageSlider images={article.projectCarousel} />
             )}
           </div>
         </div>
       </section>
 
-      {article.members.length > 0 && (
+      {article.members?.length > 0 && (
         <section>
           <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
             L&apos;équipe
@@ -126,7 +125,7 @@ export default function EventPage({
         </section>
       )}
 
-      {article.album.length > 0 && (
+      {article.album?.length > 0 && (
         <section className="flex flex-col gap-2">
           <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
             Album photo
