@@ -1,6 +1,5 @@
 import { NavItem } from "@/models/nav-item";
 import Link from "next/link";
-import Badge from "./badge";
 
 export default function NavItemComponent(props: NavItem) {
   return (
@@ -18,7 +17,7 @@ export default function NavItemComponent(props: NavItem) {
       <p className="text-black dark:text-white text-lg font-medium">
         {props.title}
       </p>
-      {props.info && <Badge text={props.info}></Badge>}
+      {props.info}
       <span
         className={`absolute inset-y-4 -left-px w-1 rounded-full bg-gradient-to-b ${
           props.isActive

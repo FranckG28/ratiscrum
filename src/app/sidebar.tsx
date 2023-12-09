@@ -12,6 +12,7 @@ import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 import { useBoolean } from "@/hooks/use-boolean";
 import { EventPreview } from "@/models/event-preview";
 import { capitalize, displayDate } from "./utils";
+import Badge from "@/components/badge";
 
 export default function Sidebar({ events }: { events: EventPreview[] }) {
   const segment = useSelectedLayoutSegment();
@@ -69,7 +70,11 @@ export default function Sidebar({ events }: { events: EventPreview[] }) {
                   title={item.name}
                   key={index}
                   subtitle={capitalize(displayDate(item.date))}
-                  info={`${item.rewards.length} récompenses`}
+                  info={
+                    item.rewardsCount > 0 && (
+                      <Badge>{item.rewardsCount} prix</Badge>
+                    )
+                  }
                   url={`/${item.slug}`}
                   isActive={segment === item.slug}
                 />
