@@ -15,11 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="fr"
-      className={`h-full ${font.variable} antialiased`}
-      suppressHydrationWarning
-    >
+    <html lang="fr" className={`h-full ${font.variable} antialiased`}>
       <head />
       <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
         <Providers>
