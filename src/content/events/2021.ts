@@ -20,7 +20,7 @@ export const event2021: Event = {
     technologies: ["Laravel"],
     projectLink: "https://ndli.depret.net/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/editions_precedentes:2021",
-    sourceLink: "",
+    sourceLink: "https://github.com/Ratiscrum/rts-2021",
     videoId: "PxYjpuAVBN8",
     members: [
         damienD,
