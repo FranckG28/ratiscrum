@@ -16,12 +16,13 @@ export default function ImageSlider({ images }: { images: string[] }) {
   return (
     <Flicking renderOnlyVisible={true} circular={true} plugins={plugins}>
       {images.map((image, i) => (
-        <div key={i} className="w-fit h-fit">
+        <div key={i} className="w-96">
           <Image
             src={image}
             alt="image"
             width={500}
             height={300}
+            style={{ width: "auto", height: "auto" }}
             className="object-cover aspect-[4/3] rounded-xl"
           />
         </div>

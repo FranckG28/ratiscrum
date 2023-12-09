@@ -10,7 +10,7 @@ export default function Gallery({ images }: { images: string[] }) {
           alt={"Photo " + index}
           className="rounded-lg shadow aspect-video object-cover"
           width={500}
-          height={500}
+          height={300}
         />
       ))}
     </div>
