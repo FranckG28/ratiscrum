@@ -23,7 +23,13 @@ export async function generateMetadata(
   { params }: { params: { slug: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  const slugs = await getAllSlugs();
+
   const slug = params.slug;
+
+  if (!slugs.includes(slug)) {
+    throw new Error(`Slug ${slug} not found`);
+  }
 
   const { event } = await getEvent(slug);
 
