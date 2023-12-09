@@ -4,12 +4,49 @@ import Providers from "@/components/providers";
 import localFont from "next/font/local";
 import { getAllSlugs } from "./actions/getAllSlugs";
 import getEventPreview from "./actions/getEventPreview";
+import { Metadata } from "next/types";
+import { appName, appUrl, description } from "./manifest";
 
 const font = localFont({
   src: "../../public/fonts/Switzer-Variable.woff2",
   variable: "--font-switzer",
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  title: appName,
+  metadataBase: new URL(appUrl),
+  description: description,
+  authors: {
+    name: appName,
+    url: appUrl,
+  },
+  openGraph: {
+    title: appName,
+    description: description,
+    url: appUrl,
+    siteName: appName,
+    images: [
+      {
+        url: `/og.png`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  icons: {
+    icon: `/favicon-512.png`,
+    shortcut: `/favicon192.png`,
+    apple: `/favicon-512.png`,
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: `/favicon-512.png`,
+    },
+  },
+  manifest: "manifest.json",
+};
 
 export default async function RootLayout({
   children,

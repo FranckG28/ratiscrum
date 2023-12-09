@@ -68,7 +68,7 @@ export default function EventPage({
       )}
 
       <section className="">
-        <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
+        <h3 className="text-xl text-slate-800 dark:text-slate-100 font-semibold py-2 tracking-tight">
           Notre projet
         </h3>
         <div className="flex max-xl:flex-col gap-8 xl:gap-16">
@@ -94,7 +94,7 @@ export default function EventPage({
 
             {article.technologies.length > 0 && (
               <div>
-                <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200 tracking-tight">
+                <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200 tracking-tight">
                   Technologies utilisés
                 </h4>
                 <p className="text-slate-600 dark:text-slate-400">
@@ -113,7 +113,7 @@ export default function EventPage({
 
       {article.members?.length > 0 && (
         <section>
-          <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
+          <h3 className="text-xl text-slate-800 dark:text-slate-100 font-semibold py-2 tracking-tight">
             L&apos;équipe
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-4 my-4">
@@ -126,7 +126,7 @@ export default function EventPage({
 
       {article.galleryImages?.length > 0 && (
         <section className="flex flex-col gap-2">
-          <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
+          <h3 className="text-xl text-slate-800 dark:text-slate-100 font-semibold py-2 tracking-tight">
             Album photo
           </h3>
           <Gallery images={article.galleryImages} />

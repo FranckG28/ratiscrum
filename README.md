@@ -5,6 +5,7 @@ Homepage for the Ratiscrum team, with projects, members, videos, rewards and gal
 ## Getting Started
 
 First, install packages
+
 ```bash
 pnpm install
 ```
@@ -28,9 +29,16 @@ e.g. : `src/content/events/2021.mdx`
 
 Take at look at the existing events to see how to write it.
 
-To add images to an event, simple put images files into `src/public/events/<slug>/project/` & `src/public/events/<slug>/gallery/`.
+#### Projet images
+
+To add **images** to an event, simple put images files into `src/public/events/<slug>/project/` & `src/public/events/<slug>/gallery/`.
 
 Supported images types are `.jpg`, `.jpeg` and `.png`.
+
+
+#### Metadata
+
+The metadatas are generated automatically from the event content. However, you can set your own OG image (800x600px) by adding a `og.jpg` file in `src/public/events/<slug>/`.
 
 
 ### Members

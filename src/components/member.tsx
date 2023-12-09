@@ -27,10 +27,12 @@ export default function MemberComponent({
         className="rounded-full border border-slate-300/20 my-2 aspect-square object-cover"
         alt={name}
       />
-      <p className="text-slate-800 dark:text-white text-lg font-medium leading-4">
+      <p className="text-slate-800 dark:text-white text-lg font-medium leading-4 text-center">
         {name}
       </p>
-      <p className="text-slate-500 dark:text-slate-400 text-sm">{role}</p>
+      <p className="text-slate-500 dark:text-slate-400 text-sm text-center">
+        {role}
+      </p>
       <div className="flex gap-3">
         {links?.map(({ name, icon, url }) => (
           <Link key={name} aria-label={name} href={url} target="_blank">

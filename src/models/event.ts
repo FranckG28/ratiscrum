@@ -4,7 +4,8 @@ import { Reward } from "./reward";
 
 export interface Event extends EventPreview {
     location: string;
-    description?: string;
+    excerpt: string;
+    tags: string[];
     technologies: string[];
     projectLink: string;
     eventLink: string;
