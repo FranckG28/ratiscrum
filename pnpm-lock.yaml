@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@egjs/react-flicking':
+    specifier: ^4.11.1
+    version: 4.11.1
   '@next/font':
     specifier: 13.1.6
     version: 13.1.6
@@ -44,9 +47,6 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
-  react-medium-image-zoom:
-    specifier: ^5.1.8
-    version: 5.1.8(react-dom@18.2.0)(react@18.2.0)
   tailwindcss:
     specifier: ^3.3.6
     version: 3.3.6
@@ -79,6 +79,62 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
+    dev: false
+
+  /@cfcs/core@0.0.24:
+    resolution: {integrity: sha512-feB38qu+eDk0Pggh/yR7gjaNmvUYA2uCxHP3Pz2MLE4LZ/9jPdtu8bzCSI47yTEhWyZCF5Pk698hdz8IN2mTjA==}
+    dependencies:
+      '@egjs/component': 3.0.5
+    dev: false
+
+  /@cfcs/core@0.1.0:
+    resolution: {integrity: sha512-kvYX0RpL45XTHJ5sW7teNbKeAa7pK3nNqaJPoFfZDPTIBJOkTtRD3QhkBG+O3Hu69a8xeMoPvF6y/RtJ6JUOdA==}
+    dependencies:
+      '@egjs/component': 3.0.5
+    dev: false
+
+  /@egjs/agent@2.4.3:
+    resolution: {integrity: sha512-XvksSENe8wPeFlEVouvrOhKdx8HMniJ3by7sro2uPF3M6QqWwjzVcmvwoPtdjiX8O1lfRoLhQMp1a7NGlVTdIA==}
+    dev: false
+
+  /@egjs/axes@3.9.0:
+    resolution: {integrity: sha512-V+HxHxEGmlu/0yJ9kqlj2doiJt1yVeROTy/0Qf+IaJ9hMabjzUgfYffGR+3atcRpejjGbcpAIiBrGbAkDVaLjg==}
+    dependencies:
+      '@cfcs/core': 0.1.0
+      '@egjs/agent': 2.4.3
+      '@egjs/component': 3.0.5
+    dev: false
+
+  /@egjs/component@3.0.5:
+    resolution: {integrity: sha512-cLcGizTrrUNA2EYE3MBmEDt2tQv1joVP1Q3oDisZ5nw0MZDx2kcgEXM+/kZpfa/PAkFvYVhRUZwytIQWoN3V/w==}
+    dev: false
+
+  /@egjs/flicking@4.11.1:
+    resolution: {integrity: sha512-HYAPgXPdCVbcJmGI1m5XwaiPGya7oXvIORSzYH9MbpB6TjVWM6OTqFcimfbrmi4lzb5TdPNxSklc1F4MeCR+Rw==}
+    dependencies:
+      '@egjs/axes': 3.9.0
+      '@egjs/component': 3.0.5
+      '@egjs/imready': 1.4.1
+      '@egjs/list-differ': 1.0.1
+    dev: false
+
+  /@egjs/imready@1.4.1:
+    resolution: {integrity: sha512-JIOBs4lB7FYdsKi5uvz2j3SObX8eShtZjtqlOH41tm185aJOQZwiKBK8+V4MxzG4X6DqVhpdN8UcuVwBbElfsg==}
+    dependencies:
+      '@cfcs/core': 0.0.24
+      '@egjs/component': 3.0.5
+    dev: false
+
+  /@egjs/list-differ@1.0.1:
+    resolution: {integrity: sha512-OTFTDQcWS+1ZREOdCWuk5hCBgYO4OsD30lXcOCyVOAjXMhgL5rBRDnt/otb6Nz8CzU0L/igdcaQBDLWc4t9gvg==}
+    dev: false
+
+  /@egjs/react-flicking@4.11.1:
+    resolution: {integrity: sha512-bC+lUCGFS6TJR0ydsWHFXKichizQ7Vej9U7M7DBqC2lgRxI+HyPp2cdK5sAm5SG3oDwDFS03fPDQ0uSsuJOIRg==}
+    dependencies:
+      '@egjs/component': 3.0.5
+      '@egjs/flicking': 4.11.1
+      '@egjs/list-differ': 1.0.1
     dev: false
 
   /@emotion/is-prop-valid@0.8.8:
@@ -2167,16 +2223,6 @@ packages:
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: false
-
-  /react-medium-image-zoom@5.1.8(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-2X4oLlEopIWg7qalR1Qpy4gPrU9CTF0DvJ7HNu5u/NwdyQWupEsje2vuMbjBz7+np8MmQ4DKJ6zGr1ofCuzB3g==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react@18.2.0:

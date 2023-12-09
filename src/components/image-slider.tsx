@@ -1,105 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
 import Image, { StaticImageData } from "next/image";
+import Flicking from "@egjs/react-flicking";
 
-export default function ImageSlider({
-  images,
-}: {
-  images: StaticImageData[];
-}) {
-  const AUTO_SLIDE_INTERVAL = 4000;
-
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-    {
-      loop: true,
-      slides: {
-        spacing: 15,
-      },
-      slideChanged(slider: any) {
-        setCurrentSlide(slider.track.details.rel);
-      },
-      created() {
-        setLoaded(true);
-      },
-    },
-
-    [
-      (slider: any) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, AUTO_SLIDE_INTERVAL);
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      },
-    ]
-  );
-
+export default function ImageSlider({ images }: { images: StaticImageData[] }) {
   return (
-    <div className="navigation-wrapper relative">
-      <div ref={sliderRef} className="keen-slider">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="keen-slider__slide rounded-xl shadow border-t border-slate-600/30"
-          >
-            <Image
-              className={`bg-cover bg-center ${loaded ? "opacity-100" : "opacity-0"
-                } transition-opacity duration-500 ease-in-out`}
-              src={image}
-              alt="Ratiscrum Logo"
-              style={{ objectFit: "cover", height: "100%", width: "100%" }}
-            />
-          </div>
-        ))}
-      </div>
-      {loaded && instanceRef.current && (
-        <>
-          <Arrow
-            left
-            onClick={(e: any) => {
-              instanceRef.current?.prev();
-            }}
-            disabled={currentSlide === 0}
-          />
-
-          <Arrow
-            onClick={(e: any) => {
-              instanceRef.current?.next();
-            }}
-            disabled={
-              currentSlide ===
-              instanceRef.current.track.details.slides.length - 1
-            }
-          />
-        </>
-      )}
-    </div>
+    <Flicking>
+      {images.map((image, i) => (
+        <Image
+          key={i}
+          src={image}
+          alt="image"
+          width={500}
+          height={500}
+          className="object-cover rounded-xl shadow"
+        />
+      ))}
+    </Flicking>
   );
 }
 
@@ -112,8 +29,9 @@ function Arrow(props: {
   return (
     <svg
       onClick={props.onClick}
-      className={`bg-gray-200 dark:bg-gray-700 transition border-t hover:scale-105 border-gray-100 dark:border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-800 dark:fill-slate-200 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-800 ${props.left ? "-left-6" : "-right-6 left-auto"
-        } ${disabeld}`}
+      className={`bg-gray-200 dark:bg-gray-700 transition border-t hover:scale-105 border-gray-100 dark:border-gray-600 hover:shadow-xl shadow-lg rounded-full p-3.5 w-10 h-10 absolute top-1/2 fill-slate-800 dark:fill-slate-200 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-800 ${
+        props.left ? "-left-6" : "-right-6 left-auto"
+      } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
