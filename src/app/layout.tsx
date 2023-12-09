@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/app/sidebar";
 import "./globals.css";
 import localFont from "@next/font/local";
 import Providers from "@/components/providers";
@@ -15,7 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`h-full ${font.variable} antialiased`}>
+    <html
+      lang="fr"
+      className={`h-full ${font.variable} antialiased`}
+      suppressHydrationWarning
+    >
       <head />
       <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
         <Providers>

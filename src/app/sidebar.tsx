@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { contentList } from "@/content/content-list";
 import { capitalize, displayDate } from "@/services/utils";
 import NavItemComponent from "@/components/nav-item";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { Menu } from "lucide-react";
 import { useBoolean, useOnClickOutside } from "usehooks-ts";
 import useScroll from "@/hooks/use-scroll";
-import SwitchTheme from "./switch-theme";
-import RatiscrumLogo from "./ratiscrum-logo";
+import SwitchTheme from "../components/switch-theme";
+import RatiscrumLogo from "../components/ratiscrum-logo";
+import { Event } from "@/models/event";
+import { contentList } from "@/content/content-list";
 
 export default function Sidebar() {
   const segment = useSelectedLayoutSegment();
@@ -28,10 +29,11 @@ export default function Sidebar() {
       <div
         ref={ref}
         className={`z-50 fixed w-full flex items-center lg:-translate-y-full transition-all duration-500 ease-in-out 
-      ${scrolled
-            ? "bg-slate-200/60 dark:bg-slate-900/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 shadow-xl"
-            : "bg-white/0 border-white/0 shadow-none"
-          }
+      ${
+        scrolled
+          ? "bg-slate-200/60 dark:bg-slate-900/60 backdrop-blur-md border-b border-slate-300 dark:border-slate-700 shadow-xl"
+          : "bg-white/0 border-white/0 shadow-none"
+      }
       `}
       >
         <button
@@ -41,7 +43,7 @@ export default function Sidebar() {
           <Menu className="dark:text-white text-slate-800 group-active:scale-90 transition" />
         </button>
         <Link href={"/"} onClick={setFalse}>
-          <RatiscrumLogo width={120} />
+          <RatiscrumLogo size="md" />
         </Link>
       </div>
 
@@ -61,19 +63,19 @@ export default function Sidebar() {
             <Link className="w-48 max-lg:hidden" href={"/"}>
               <RatiscrumLogo />
             </Link>
-            {contentList.map((item, index) => (
-              <NavItemComponent
-                title={item.name}
-                key={index}
-                subtitle={capitalize(displayDate(item.date))}
-                info={`${item.rewards.length} récompenses`}
-                url={`/${item.slug}`}
-                isActive={segment === item.slug}
-              />
-            ))}
-          </div>
-          <div className="fixed bottom-0 m-8">
-            <SwitchTheme />
+            <div className="flex-1 flex-col gap-2">
+              {contentList.map((item, index) => (
+                <NavItemComponent
+                  title={item.name}
+                  key={index}
+                  subtitle={capitalize(displayDate(item.date))}
+                  info={`${item.rewards.length} récompenses`}
+                  url={`/${item.slug}`}
+                  isActive={segment === item.slug}
+                />
+              ))}
+            </div>
+            <SwitchTheme className="bottom-0" />
           </div>
         </div>
       </nav>
