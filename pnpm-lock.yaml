@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@egjs/flicking-plugins':
+    specifier: ^4.7.1
+    version: 4.7.1(@egjs/flicking@4.11.1)
   '@egjs/react-flicking':
     specifier: ^4.11.1
     version: 4.11.1
@@ -107,6 +110,14 @@ packages:
 
   /@egjs/component@3.0.5:
     resolution: {integrity: sha512-cLcGizTrrUNA2EYE3MBmEDt2tQv1joVP1Q3oDisZ5nw0MZDx2kcgEXM+/kZpfa/PAkFvYVhRUZwytIQWoN3V/w==}
+    dev: false
+
+  /@egjs/flicking-plugins@4.7.1(@egjs/flicking@4.11.1):
+    resolution: {integrity: sha512-J0k499sCs5IAMXAJuBcrY1OoiHRi4BPbS1/RCCkIzsYgdoHzcAUjKyhSsms3gLz4O/K5eTbBmWBUtFO86fETHg==}
+    peerDependencies:
+      '@egjs/flicking': ^4.1.0
+    dependencies:
+      '@egjs/flicking': 4.11.1
     dev: false
 
   /@egjs/flicking@4.11.1:
