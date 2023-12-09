@@ -6,8 +6,8 @@ import MemberComponent from "@/components/member";
 import RewardComponent from "@/components/reward";
 import YouTube from "@/components/youtube";
 import { Event } from "@/models/event";
-import { capitalize, displayDate, prettifyUrl } from "@/services/utils";
 import { ExternalLink, Medal, LinkIcon, Code2 } from "lucide-react";
+import { capitalize, displayDate, prettifyUrl } from "../utils";
 
 export default function EventPage({
   article,
@@ -104,8 +104,8 @@ export default function EventPage({
             )}
           </div>
           <div className="flex flex-col xl:w-1/2">
-            {article.projectCarousel?.length > 0 && (
-              <ImageSlider images={article.projectCarousel} />
+            {article.projectImages?.length > 0 && (
+              <ImageSlider images={article.projectImages} />
             )}
           </div>
         </div>
@@ -124,12 +124,12 @@ export default function EventPage({
         </section>
       )}
 
-      {article.album?.length > 0 && (
+      {article.galleryImages?.length > 0 && (
         <section className="flex flex-col gap-2">
           <h3 className="text-xl text-slate-800 dark:text-slate-100 font-medium py-2 tracking-tight">
             Album photo
           </h3>
-          <Gallery images={article.album} />
+          <Gallery images={article.galleryImages} />
         </section>
       )}
     </div>

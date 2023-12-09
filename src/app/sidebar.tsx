@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { capitalize, displayDate } from "@/services/utils";
 import NavItemComponent from "@/components/nav-item";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { Menu } from "lucide-react";
@@ -12,6 +11,7 @@ import RatiscrumLogo from "../components/ratiscrum-logo";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 import { useBoolean } from "@/hooks/use-boolean";
 import { EventPreview } from "@/models/event-preview";
+import { capitalize, displayDate } from "./utils";
 
 export default function Sidebar({ events }: { events: EventPreview[] }) {
   const segment = useSelectedLayoutSegment();

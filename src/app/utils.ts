@@ -1,15 +1,16 @@
-import * as path from 'path';
-import * as fs from 'fs';
+export const displayDate = (date: Date): string => {
+    return date.toLocaleDateString("fr-FR", {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}
 
-export const lookForImage = (filePath: string): string | null => {
-    const imageExtensions = ['.jpg', '.jpeg', '.png'];
+export const capitalize = (str: string): string => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-    for (const extension of imageExtensions) {
-        const imagePath = `${filePath}${extension}`;
-        if (fs.existsSync(imagePath)) {
-            return extension;
-        }
-    }
-
-    return null;
+export const prettifyUrl = (url: string): string => {
+    return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0];
 }

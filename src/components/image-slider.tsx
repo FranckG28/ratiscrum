@@ -1,12 +1,12 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Flicking, { ViewportSlot } from "@egjs/react-flicking";
 import { Arrow, AutoPlay, Fade, Parallax } from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/arrow.css";
 
-export default function ImageSlider({ images }: { images: StaticImageData[] }) {
+export default function ImageSlider({ images }: { images: string[] }) {
   const plugins = [
     new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: true }),
     new Fade(),

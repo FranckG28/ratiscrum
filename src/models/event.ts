@@ -1,4 +1,3 @@
-import { StaticImageData } from "next/image";
 import { EventPreview } from "./event-preview";
 import { Member } from "./member";
 import { Reward } from "./reward";
@@ -13,6 +12,6 @@ export interface Event extends EventPreview {
     videoId: string;
     members: Member[];
     rewards: Reward[];
-    projectCarousel: StaticImageData[];
-    album: StaticImageData[];
+    galleryImages: string[];
+    projectImages: string[];
 }

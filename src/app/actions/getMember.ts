@@ -1,7 +1,7 @@
 import { Member } from "@/models/member";
 import fs from "fs";
 import { assetsPath, membersPath } from "../config";
-import { lookForImage } from "../utils";
+import { lookForImage } from "./files";
 import parseMdx from "./parseMdx";
 
 export default async function getMember(slug: string): Promise<Member> {
@@ -18,7 +18,7 @@ export default async function getMember(slug: string): Promise<Member> {
         throw new Error(`Invalid MDX source for member: ${slug}. Folder name & mdx file name must be the same.`);
     }
 
-    const imageExtension = lookForImage(`.${assetsPath}members/${slug}`);
+    const imageExtension = await lookForImage(`${assetsPath}members/${slug}`);
 
     return {
         slug: slug,

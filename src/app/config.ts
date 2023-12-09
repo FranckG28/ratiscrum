@@ -4,3 +4,5 @@ export const eventsPath = contentPath + "events/";
 export const membersPath = contentPath + "members/";
 
 export const assetsPath = "/public/";
+
+export const imageExtensions = ['.jpg', '.jpeg', '.png'];

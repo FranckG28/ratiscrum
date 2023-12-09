@@ -1,4 +1,6 @@
 import { Event } from "@/models/event";
+import { assetsPath } from "../config";
+import { imagesInFolder } from "./files";
 import getEventMembers from "./getEventMembers";
 import getEventPreview from "./getEventPreview";
 
@@ -11,16 +13,15 @@ export default async function getEvent(slug: string): Promise<{
 
     const members = await getEventMembers(mdx.frontmatter.members);
 
-    console.log(members);
-
-    // todo : get rewards
-    // todo : get images
-    // todo : get participants
+    const galleryImages = await imagesInFolder(`.${assetsPath}events/${slug}/gallery/`);
+    const projectImages = await imagesInFolder(`.${assetsPath}events/${slug}/project/`);
 
     return {
         event: {
             ...event,
             members,
+            galleryImages,
+            projectImages,
         } as unknown as Event,
         mdx,
     };
