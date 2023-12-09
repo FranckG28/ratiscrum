@@ -6,12 +6,14 @@ import { imageExtensions } from '../config';
 
 export async function getFileList(folderPath: string): Promise<string[]> {
 
-    const dirContent = await fs.readdir(`${process.cwd()}${folderPath}`);
+    const dirContent = await fs.readdir(path.join(process.cwd(), folderPath));
+
+    console.log("dir content", dirContent);
 
     const files: string[] = [];
 
     for (const file of dirContent) {
-        const filePath = `${process.cwd()}${folderPath}${file}`;
+        const filePath = path.join(process.cwd(), folderPath, file);
         const fileStat = await fs.stat(filePath);
         if (fileStat.isFile()) {
             files.push(file);
@@ -23,7 +25,7 @@ export async function getFileList(folderPath: string): Promise<string[]> {
 
 export async function fileExists(filePath: string): Promise<boolean> {
     try {
-        await fs.stat(`${process.cwd()}${filePath}`);
+        await fs.stat(path.join(process.cwd(), filePath));
         return true;
     } catch {
         return false;
@@ -47,7 +49,7 @@ export async function imagesInFolder(folderPath: string): Promise<string[]> {
 
     const images: string[] = [];
 
-    const dirContent = await fs.readdir(`${process.cwd()}${folderPath}`);
+    const dirContent = await fs.readdir(path.join(process.cwd(), folderPath));
 
     for (const file of dirContent) {
         const fileExtension = path.extname(file);

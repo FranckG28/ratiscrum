@@ -3,14 +3,15 @@
 import { promises as fs } from 'fs';
 import { serialize } from "next-mdx-remote/serialize";
 import { fileExists } from "./files";
+import * as path from 'path';
 
-export default async function parseMdx(path: string) {
+export default async function parseMdx(filePath: string) {
 
-    if (!await fileExists(path)) {
+    if (!await fileExists(filePath)) {
         throw new Error(`File not found: ${path}`);
     }
 
-    const postFile = await fs.readFile(`${process.cwd()}${path}`);
+    const postFile = await fs.readFile(path.join(process.cwd(), filePath));
 
     const mdxSource = await serialize(postFile, { parseFrontmatter: true });
 
