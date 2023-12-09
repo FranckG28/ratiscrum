@@ -69,7 +69,7 @@ export default function Sidebar({ events }: { events: EventPreview[] }) {
                   title={item.name}
                   key={index}
                   subtitle={capitalize(displayDate(item.date))}
-                  // info={`${item.rewards.length} récompenses`}
+                  info={`${item.rewards.length} récompenses`}
                   url={`/${item.slug}`}
                   isActive={segment === item.slug}
                 />

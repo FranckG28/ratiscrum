@@ -22,9 +22,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Events 
 
-Events are located in `src/content/events`. The slug of an event is its foldername.
+Events are located in `src/content/events`. The slug of an event is its filename.
 
-An event folder must contain `<slug>.mdx`. This file contain event data. Take at look at the existing events to see how to write it.
+e.g. : `src/content/events/2021.mdx`
+
+Take at look at the existing events to see how to write it.
 
 To add images to an event, simple put images files into `src/public/events/<slug>/project/` & `src/public/events/<slug>/gallery/`.
 

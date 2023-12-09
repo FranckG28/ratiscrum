@@ -2,12 +2,12 @@ import { EventPreview } from "@/models/event-preview";
 import { eventsPath } from "../config";
 import parseMdx from "./parseMdx";
 
-export default async function getEvent(slug: string): Promise<{
+export default async function getEventPreview(slug: string): Promise<{
     event: EventPreview;
     mdx: any;
 }> {
 
-    const path = `${eventsPath}/${slug}/${slug}.mdx`;
+    const path = `${eventsPath}${slug}.mdx`;
 
     const mdxSource = await parseMdx(path);
 
@@ -26,6 +26,7 @@ export default async function getEvent(slug: string): Promise<{
             slug: slug,
             ...mdxSource.frontmatter,
             date: new Date(time),
+            rewardsCount: (mdxSource.frontmatter.rewards as [] ?? []).length,
         } as unknown as EventPreview,
         mdx: mdxSource,
     };

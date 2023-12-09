@@ -35,7 +35,13 @@ export default async function RootLayout({
       <head />
       <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
         <Providers>
-          <Sidebar events={eventPreviews.map(({ event }) => event)} />
+          <Sidebar
+            events={eventPreviews
+              .map(({ event }) => event)
+              .sort((e1, e2) => {
+                return e2.date.getTime() - e1.date.getTime();
+              })}
+          />
 
           <main className="flex-1 overflow-x-hidden">
             <div className="mx-auto max-w-6xl py-8 px-8 max-lg:pt-20">
