@@ -54,7 +54,7 @@ export async function generateMetadata(
     openGraph: {
       title,
       description: event.excerpt,
-      url: `${appUrl}${slug}`,
+      url: `${appUrl}/${slug}`,
       siteName: appName,
       images: previousImages,
       locale: "fr_FR",
