@@ -1,11 +1,13 @@
 "use server";
 
-import fs from "fs";
 import { eventsPath } from "../config";
+import { getFileList } from "./files";
 
 export async function getAllSlugs(): Promise<string[]> {
 
-    return fs.readdirSync(eventsPath, { withFileTypes: true })
-        .filter((dirent) => dirent.isFile() && dirent.name.endsWith('.mdx'))
-        .map((dirent) => dirent.name.replace('.mdx', ''));
+    const files = await getFileList(eventsPath)
+
+    return files
+        .filter((file) => file.endsWith('.mdx'))
+        .map((file) => file.replace('.mdx', ''));
 }

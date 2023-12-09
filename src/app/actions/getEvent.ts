@@ -13,8 +13,8 @@ export default async function getEvent(slug: string): Promise<{
 
     const members = await getEventMembers(mdx.frontmatter.members);
 
-    const galleryImages = await imagesInFolder(`.${assetsPath}events/${slug}/gallery/`);
-    const projectImages = await imagesInFolder(`.${assetsPath}events/${slug}/project/`);
+    const galleryImages = await imagesInFolder(`${assetsPath}events/${slug}/gallery/`);
+    const projectImages = await imagesInFolder(`${assetsPath}events/${slug}/project/`);
 
     return {
         event: {

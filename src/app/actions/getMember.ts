@@ -1,14 +1,13 @@
 import { Member } from "@/models/member";
-import fs from "fs";
 import { assetsPath, membersPath } from "../config";
-import { lookForImage } from "./files";
+import { fileExists, lookForImage } from "./files";
 import parseMdx from "./parseMdx";
 
 export default async function getMember(slug: string): Promise<Member> {
 
     const path = `${membersPath}/${slug}.mdx`;
 
-    if (!fs.existsSync(path)) {
+    if (!await fileExists(path)) {
         throw new Error(`Member not found: ${path}. You must create the file ${path}.`);
     }
 

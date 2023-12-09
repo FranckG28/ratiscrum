@@ -4,9 +4,9 @@ import EventPage from "./EventPage";
 import { getAllSlugs } from "../actions/getAllSlugs";
 import getEvent from "../actions/getEvent";
 import { Metadata, ResolvingMetadata } from "next";
-import fs from "fs";
 import { defaultOg } from "../config";
 import { appName, appUrl } from "../manifest";
+import { fileExists } from "../actions/files";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { mdx, event } = await getEvent(params.slug);
@@ -15,7 +15,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  return getAllSlugs();
+  const slugs = await getAllSlugs();
+  return slugs;
 }
 
 export async function generateMetadata(
@@ -28,7 +29,7 @@ export async function generateMetadata(
 
   let ogImagePath = `/events/${slug}/og.png`;
 
-  if (!fs.existsSync(`./public${ogImagePath}`)) {
+  if (await fileExists(`./public${ogImagePath}`)) {
     ogImagePath = defaultOg;
   }
 
