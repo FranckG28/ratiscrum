@@ -3,8 +3,8 @@ import classNames from "classnames";
 type LogoSize = "sm" | "md" | "lg";
 
 const imageSizes: Record<LogoSize, { width: number; height: number }> = {
-  sm: { width: 40, height: 40 },
-  md: { width: 60, height: 60 },
+  sm: { width: 30, height: 30 },
+  md: { width: 50, height: 50 },
   lg: { width: 120, height: 120 },
 };
 

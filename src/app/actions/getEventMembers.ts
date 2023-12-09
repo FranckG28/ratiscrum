@@ -1,11 +1,20 @@
 import { Member } from "@/models/member";
 import getMember from "./getMember";
 
-export default function getEventMembers(slugs: string[]): Promise<Member[]> {
+export default function getEventMembers(members: {
+    slug: string;
+    role?: string;
+}[]): Promise<Member[]> {
 
-    if (slugs.length === 0) {
+    if (members?.length === 0) {
         return Promise.resolve([]);
     }
 
-    return Promise.all(slugs.map(slug => getMember(slug)));
+    return Promise.all(members.map(async (member) => {
+        const m = await getMember(member.slug);
+        return {
+            ...m,
+            role: member.role,
+        } as Member;
+    }));
 }
