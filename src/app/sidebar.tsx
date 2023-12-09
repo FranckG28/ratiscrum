@@ -9,11 +9,11 @@ import { Menu } from "lucide-react";
 import useScroll from "@/hooks/use-scroll";
 import SwitchTheme from "../components/switch-theme";
 import RatiscrumLogo from "../components/ratiscrum-logo";
-import { contentList } from "@/content/content-list";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 import { useBoolean } from "@/hooks/use-boolean";
+import { EventPreview } from "@/models/event-preview";
 
-export default function Sidebar() {
+export default function Sidebar({ events }: { events: EventPreview[] }) {
   const segment = useSelectedLayoutSegment();
 
   const { value, toggle, setFalse } = useBoolean(false);
@@ -64,12 +64,12 @@ export default function Sidebar() {
               <RatiscrumLogo />
             </Link>
             <div className="flex-1 flex-col gap-2">
-              {contentList.map((item, index) => (
+              {events.map((item, index) => (
                 <NavItemComponent
                   title={item.name}
                   key={index}
                   subtitle={capitalize(displayDate(item.date))}
-                  info={`${item.rewards.length} récompenses`}
+                  // info={`${item.rewards.length} récompenses`}
                   url={`/${item.slug}`}
                   isActive={segment === item.slug}
                 />

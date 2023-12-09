@@ -61,7 +61,6 @@ export default function EventPage({
                 rank={reward.rank}
                 title={reward.title}
                 description={reward.description}
-                url={reward.url}
               ></RewardComponent>
             ))}
           </div>

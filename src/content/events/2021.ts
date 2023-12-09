@@ -9,16 +9,11 @@ import { antoineT } from "../members/antoine-t";
 import { erenC } from "../members/eren-c";
 import { antoineV } from "../members/antoine-v";
 
-import Content from './2021.mdx';
-
 export const event2021: Event = {
     slug: "ndli-2021",
     name: "Nuit de l'info 2021",
     date: new Date(2021, 12, 4),
     location: "IUT Robert Schuman, Illkirch Graffenstaden",
-    // description: `
-    // Cette année, le sujet a été élaboré par la station de Dunkerque de la Société Nationale de Sauvegarde en Mer (SNSM) et s’intitulait « L’informatique à l’aide de l’histoire des sauvetages en mer ». L'objectif était de créer un site communautaire repertoriant toutes les informations sur les sauvetages en mer. Les membres de la communauté pourront ajouter des informations sur les sauvetages, les bateaux, les sauvés ... 
-    // `,
     technologies: ["Laravel"],
     projectLink: "https://ndli.depret.net/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/editions_precedentes:2021",
@@ -39,7 +34,6 @@ export const event2021: Event = {
             rank: 1,
             title: "VEGA CS GROUP",
             description: "1500€",
-            url: "https://www.nuitdelinfo.com/inscription/defis/176",
         }
     ],
     projectCarousel: [

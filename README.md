@@ -4,10 +4,32 @@ Homepage for the Ratiscrum team, with projects, members, videos, rewards and gal
 
 ## Getting Started
 
-First, run the development server:
+First, install packages
+```bash
+pnpm install
+```
+
+Then, to run the development server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+## Editing content
+
+### Events 
+
+Events are located in `src/content/events`. The slug of an event is its foldername.
+
+An event folder must contain `<slug>.mdx`. This file contain event data & description.
+
+### Members
+
+Members are located in `src/content/members`. Each member has his own .mdx file.
+To reference a member in an event, use his mdx file name (without the extension). 
+The slug of a member is its filename.
+
+The avatar of the member should be located in `public/members/<slug>.jpg`.

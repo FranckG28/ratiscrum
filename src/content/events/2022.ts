@@ -43,19 +43,16 @@ export const event2022: Event = {
             rank: 1,
             title: "VEGA CS GROUP",
             description: "1500€",
-            url: "https://www.nuitdelinfo.com/inscription/defis/176",
         },
         {
             rank: 1,
             title: "THE AIRBUS X PRIZE",
             description: "500€ Illicado + visite des salles blanches d'intégration satellite à Toulouse",
-            url: "https://www.nuitdelinfo.com/inscription/defis/375",
         },
         {
             rank: 2,
             title: "Nuit de l'info",
             description: "Sujet national dévoilé au lancement de la nuit",
-            url: "https://www.nuitdelinfo.com/inscription/defis/174",
         }
     ],
     projectCarousel: [

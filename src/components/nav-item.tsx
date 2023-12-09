@@ -18,7 +18,7 @@ export default function NavItemComponent(props: NavItem) {
       <p className="text-black dark:text-white text-lg font-medium">
         {props.title}
       </p>
-      <Badge text={props.info}></Badge>
+      {props.info && <Badge text={props.info}></Badge>}
       <span
         className={`absolute inset-y-4 -left-px w-1 rounded-full bg-gradient-to-b ${
           props.isActive

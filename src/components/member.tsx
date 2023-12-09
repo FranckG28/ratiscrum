@@ -12,11 +12,16 @@ const memberIcons: { [icon: string]: React.ReactNode } = {
   youtube: <Youtube className={iconClass} />,
 };
 
-export default function MemberComponent({ name, role, avatar, links }: Member) {
+export default function MemberComponent({
+  name,
+  role,
+  avatarUrl,
+  links,
+}: Member) {
   return (
     <div className="flex flex-col items-center gap-1">
       <Image
-        src={avatar}
+        src={avatarUrl ?? "/rat.png"}
         width={75}
         height={75}
         className="rounded-full border border-slate-300/20 my-2 aspect-square object-cover"
@@ -27,7 +32,7 @@ export default function MemberComponent({ name, role, avatar, links }: Member) {
       </p>
       <p className="text-slate-500 dark:text-slate-400 text-sm">{role}</p>
       <div className="flex gap-3">
-        {links.map(({ name, icon, url }) => (
+        {links?.map(({ name, icon, url }) => (
           <Link key={name} aria-label={name} href={url} target="_blank">
             {memberIcons[icon]}
           </Link>
