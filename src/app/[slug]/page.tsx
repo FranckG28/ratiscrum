@@ -2,6 +2,8 @@
 
 import { contentList } from "@/content/content-list";
 import EventPage from "./EventPage";
+import fs from "fs";
+import { serialize } from "next-mdx-remote/serialize";
 
 async function getEvent(slug: string) {
   const article = contentList.find((article) => article.slug === slug);
@@ -16,7 +18,13 @@ async function getEvent(slug: string) {
 export default async function Page({ params }: { params: { slug: string } }) {
   const article = await getEvent(params.slug);
 
-  return <EventPage article={article} />;
+  const postFile = fs.readFileSync(`./src/content/events/${params.slug}.mdx`);
+
+  // read the MDX serialized content along with the frontmatter
+  // from the .mdx blog post file
+  const mdxSource = await serialize(postFile, { parseFrontmatter: true });
+
+  return <EventPage article={article} mdx={mdxSource} />;
 }
 
 export async function generateStaticParams() {

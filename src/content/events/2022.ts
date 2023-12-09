@@ -23,20 +23,6 @@ export const event2022: Event = {
     name: "Nuit de l'info 2022",
     date: new Date("2022/12/01"),
     location: "UFR Math-Info, Strasbourg",
-    description: `
-    Notre projet s'inscrit dans l'objectif de la nuit de l'info 2022. En ce 1er décembre 2022, 34ème journée
-    mondiale de lutte contre le SIDA, notre mission était de développer un jeu en ligne dans le but 
-    de sensibiliser les utilisateurs aux problématiques liées à la santé sexuelle.
-    A travers une approche ludique et dédramatisante de la sexualité, nous avons donc réfléchi à un concept
-    de jeu qui nous permettrait d'atteindre cet objectif.
-
-    Notre jeu tire son inspiration du jeu Reigns ou le joueur doit gérer son royaume en effectuant des choix qui vont
-    impacter l'un des facteurs clé du royaume (finances, armée, peuple, église).
-
-    C'est avec cette idée en tête que nous avons créé Ratisexe. Chaque jour, le joueur va devoir faire un choix
-    qui va l'impacter sur sa santé, son plaisir sexuel et sur ses finances. Le but du jeu ? Aller le plus loin possible
-    sans qu'aucun de ces trois indicateurs ne finisse à zéro !
-    `,
     technologies: ["React", "TailwindCSS", "Daisy UI"],
     projectLink: "https://ratisexe.ratiscrum.fr/",
     eventLink: "https://www.nuitdelinfo.com/nuitinfo/start",

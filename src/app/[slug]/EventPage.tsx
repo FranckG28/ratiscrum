@@ -1,4 +1,5 @@
 import Button from "@/components/button";
+import Content from "@/components/content";
 import Gallery from "@/components/gallery";
 import ImageSlider from "@/components/image-slider";
 import MemberComponent from "@/components/member";
@@ -7,11 +8,14 @@ import YouTube from "@/components/youtube";
 import { Event } from "@/models/event";
 import { capitalize, displayDate, prettifyUrl } from "@/services/utils";
 import { ExternalLink, Medal, LinkIcon, Code2 } from "lucide-react";
+import { MDXRemote } from "next-mdx-remote";
 
 export default function EventPage({
   article,
+  mdx,
 }: {
   article: Event;
+  mdx: any;
 }): JSX.Element {
   return (
     <div className="flex flex-col gap-6">
@@ -72,9 +76,7 @@ export default function EventPage({
         <div className="flex max-xl:flex-col gap-8 xl:gap-16">
           <div className="xl:w-2/3 gap-8 flex flex-col">
             <div className="flex flex-col gap-4">
-              <p className="text-slate-600 dark:text-slate-400">
-                {article.description}
-              </p>
+              <Content mdx={mdx} />
 
               <div className="flex gap-2 xl:gap-8 max-xl:flex-col">
                 {article.projectLink && (
