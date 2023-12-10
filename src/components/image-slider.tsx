@@ -5,6 +5,7 @@ import Flicking, { ViewportSlot } from "@egjs/react-flicking";
 import { Arrow, AutoPlay, Fade, Parallax } from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/arrow.css";
+import GalleryImage from "./gallery-image";
 
 export default function ImageSlider({ images }: { images: string[] }) {
   const plugins = [
@@ -17,14 +18,7 @@ export default function ImageSlider({ images }: { images: string[] }) {
     <Flicking renderOnlyVisible={true} circular={true} plugins={plugins}>
       {images.map((image, i) => (
         <div key={i} className="w-96">
-          <Image
-            src={image}
-            alt="image"
-            width={500}
-            height={300}
-            style={{ width: "auto", height: "auto" }}
-            className="object-cover aspect-[4/3] rounded-xl"
-          />
+          <GalleryImage src={image} alt={`Photo ${i + 1}`} />
         </div>
       ))}
       <ViewportSlot>

@@ -1,17 +1,10 @@
-import Image from "next/image";
+import GalleryImage from "./gallery-image";
 
 export default function Gallery({ images }: { images: string[] }) {
   return (
-    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 w-full">
+    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       {images.map((photo, index) => (
-        <Image
-          key={index}
-          src={photo}
-          alt={"Photo " + index}
-          className="rounded-lg shadow aspect-video object-cover"
-          width={500}
-          height={300}
-        />
+        <GalleryImage key={index} src={photo} alt={`Photo ${index + 1}`} />
       ))}
     </div>
   );

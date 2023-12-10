@@ -61,7 +61,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head />
-      <body className="bg-slate-100 dark:bg-slate-900 flex w-screen overflow-x-hidden min-h-screen">
+      <body className="bg-slate-100 dark:bg-slate-900 transition-colors flex w-screen overflow-x-hidden min-h-screen">
         <Providers>
           <Sidebar events={previews} />
 

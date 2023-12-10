@@ -1,6 +1,6 @@
-export const displayDate = (date: Date): string => {
+export const displayDate = (date: Date, displayWeekday = false): string => {
     return date.toLocaleDateString("fr-FR", {
-        weekday: 'long',
+        ...(displayWeekday && { weekday: 'long' }),
         year: 'numeric',
         month: 'long',
         day: 'numeric'
