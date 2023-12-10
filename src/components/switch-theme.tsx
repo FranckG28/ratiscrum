@@ -1,20 +1,30 @@
-import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
-import { motion } from "framer-motion";
+"use client";
 
-export default function SwitchTheme() {
+import classNames from "classnames";
+import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { Moon, Sun } from "lucide-react";
+
+export default function SwitchTheme({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
 
   if (!theme) {
+    console.warn("theme is null");
     return null;
   }
+
   const toggleSwitch = () => {
+    console.log("theme", theme);
+
     if (theme === "dark") {
+      console.log("theme", theme);
       setTheme("light");
     } else {
+      console.log("theme", theme);
       setTheme("dark");
     }
   };
+
   const spring = {
     type: "spring",
     stiffness: 700,
@@ -22,13 +32,17 @@ export default function SwitchTheme() {
   };
 
   return (
-    <div
+    <button
+      type="button"
       onClick={toggleSwitch}
-      className={`flex-start flex h-[50px] w-[100px] rounded-[50px] bg-zinc-100 p-[5px] shadow-inner hover:cursor-pointer dark:bg-slate-700/50 ${theme === "light" && "place-content-end"
-        }`}
+      className={classNames(
+        "flex-start flex h-12 w-24 rounded-full bg-zinc-100 p-1 shadow-inner hover:cursor-pointer dark:bg-slate-700/50",
+        theme === "light" && "place-content-end",
+        className
+      )}
     >
       <motion.div
-        className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black/70"
+        className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-slate-900"
         layout
         transition={spring}
       >
@@ -40,6 +54,6 @@ export default function SwitchTheme() {
           )}
         </motion.div>
       </motion.div>
-    </div>
+    </button>
   );
 }
