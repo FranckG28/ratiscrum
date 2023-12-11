@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin, Youtube } from "lucide-react";
+import { Github, Linkedin, Youtube, Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Member } from "@/models/member";
@@ -10,6 +10,7 @@ const memberIcons: { [icon: string]: React.ReactNode } = {
   linkedin: <Linkedin className={iconClass} />,
   github: <Github className={iconClass} />,
   youtube: <Youtube className={iconClass} />,
+  website: <Link2 className={iconClass} />,
 };
 
 export default function MemberComponent({
