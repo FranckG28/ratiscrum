@@ -1,5 +1,7 @@
 import { EventPreview } from "@/models/event-preview";
+import { notFound } from "next/navigation";
 import { eventsPath } from "../config";
+import { fileExists } from "./files";
 import parseMdx from "./parseMdx";
 
 export default async function getEventPreview(slug: string): Promise<{
@@ -8,6 +10,10 @@ export default async function getEventPreview(slug: string): Promise<{
 }> {
 
     const path = `${eventsPath}${slug}.mdx`;
+
+    if (!await fileExists(path)) {
+        return notFound();
+    }
 
     const mdxSource = await parseMdx(path);
 

@@ -22,7 +22,7 @@ export default function Ratilogo({ size = "md" }: { size?: LogoSize }) {
           width: imageSizes[size].width,
           height: imageSizes[size].height,
         }}
-        className="text-base-content"
+        className="text-white"
         width="130"
         height="132"
         viewBox="0 0 130 132"

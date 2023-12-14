@@ -6,7 +6,6 @@ import NavItemComponent from "@/components/nav-item";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { Menu } from "lucide-react";
 import useScroll from "@/hooks/use-scroll";
-import SwitchTheme from "../components/switch-theme";
 import RatiscrumLogo from "../components/ratiscrum-logo";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 import { useBoolean } from "@/hooks/use-boolean";

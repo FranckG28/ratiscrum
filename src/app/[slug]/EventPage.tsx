@@ -32,7 +32,7 @@ export default function EventPage({
         <div className="flex items-center gap-4 py-3">
           {article.projectLink && (
             <Button style="primary" href={article.projectLink}>
-              Visiter
+              Voir notre projet
               <ExternalLink size={22} />
             </Button>
           )}
@@ -42,7 +42,7 @@ export default function EventPage({
               href={article.eventLink}
               className="px-4 xl:order-first"
             >
-              Site officiel
+              Site de l&apos;évènement
             </Button>
           )}
         </div>
