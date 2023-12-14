@@ -7,6 +7,7 @@ import { Metadata, ResolvingMetadata } from "next";
 import { defaultOg } from "../config";
 import { appName, appUrl } from "../manifest";
 import { fileExists } from "../actions/files";
+import { notFound } from "next/navigation";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { mdx, event } = await getEvent(params.slug);
@@ -28,7 +29,7 @@ export async function generateMetadata(
   const slug = params.slug;
 
   if (!slugs.includes(slug)) {
-    throw new Error(`Slug ${slug} not found`);
+    return notFound();
   }
 
   const { event } = await getEvent(slug);
