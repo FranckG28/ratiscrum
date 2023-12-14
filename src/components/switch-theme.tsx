@@ -1,28 +1,24 @@
 "use client";
 
 import classNames from "classnames";
-import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 
 export default function SwitchTheme({ className }: { className?: string }) {
-  const { theme, setTheme } = useTheme();
-
-  if (!theme) {
-    console.warn("theme is null");
-    return null;
-  }
+  // if (!theme) {
+  //   console.warn("theme is null");
+  //   return null;
+  // }
 
   const toggleSwitch = () => {
-    console.log("theme", theme);
-
-    if (theme === "dark") {
-      console.log("theme", theme);
-      setTheme("light");
-    } else {
-      console.log("theme", theme);
-      setTheme("dark");
-    }
+    // console.log("theme", theme);
+    // if (theme === "dark") {
+    //   console.log("theme", theme);
+    //   setTheme("light");
+    // } else {
+    //   console.log("theme", theme);
+    //   setTheme("dark");
+    // }
   };
 
   const spring = {
