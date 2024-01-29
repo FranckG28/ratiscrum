@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Metadata } from "next/types";
 import { appName, appUrl, description } from "./manifest";
 import getSortedEventPreviews from "./actions/getSortedEventPreviews";
+import { Analytics } from "@vercel/analytics/react";
 
 const font = localFont({
   src: "../../public/fonts/Switzer-Variable.woff2",
@@ -73,6 +74,8 @@ export default async function RootLayout({
               © Ratiscrum 🐀 - {new Date().getFullYear()}
             </p>
           </footer>
+
+          <Analytics />
         </main>
       </body>
     </html>
