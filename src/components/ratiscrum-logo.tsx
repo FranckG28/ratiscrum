@@ -2,15 +2,15 @@ import classNames from "classnames";
 
 type LogoSize = "sm" | "md" | "lg";
 
-const imageSizes: Record<LogoSize, { width: number; height: number }> = {
-  sm: { width: 30, height: 30 },
-  md: { width: 50, height: 50 },
-  lg: { width: 120, height: 120 },
+const imageSizes: Record<LogoSize, string> = {
+  sm: "w-6 h-6",
+  md: "w-10 h-10 lg:w-12 lg:h-12",
+  lg: "w-32 h-32",
 };
 
 const textSizes: Record<LogoSize, string> = {
   sm: "text-xl",
-  md: "text-4xl",
+  md: "text-2xl lg:text-3xl",
   lg: "text-6xl",
 };
 
@@ -18,11 +18,7 @@ export default function Ratilogo({ size = "md" }: { size?: LogoSize }) {
   return (
     <div className="flex items-end -space-x-4">
       <svg
-        style={{
-          width: imageSizes[size].width,
-          height: imageSizes[size].height,
-        }}
-        className="text-white"
+        className={classNames("text-white", imageSizes[size])}
         width="130"
         height="132"
         viewBox="0 0 130 132"

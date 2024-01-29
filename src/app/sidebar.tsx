@@ -37,7 +37,7 @@ export default function Sidebar({ events }: { events: EventPreview[] }) {
       `}
       >
         <button
-          className="group p-4 hover:bg-slate-300 hover:dark:bg-white/20 transition-all"
+          className="group p-4 hover:bg-slate-300 hover:dark:bg-white/20 transition-all rounded-br-xl"
           onClick={toggle}
         >
           <Menu className="dark:text-white text-slate-800 group-active:scale-90 transition" />

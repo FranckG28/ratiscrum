@@ -20,16 +20,16 @@ export default function EventPage({
     <div className="flex flex-col gap-6">
       {article.videoId && <YouTube videoId={article.videoId} />}
 
-      <section className="flex max-xl:flex-col lg:justify-between my-1">
+      <section className="flex max-xl:flex-col lg:justify-between my-1 gap-2">
         <div className="max-lg:flex max-lg:flex-col max-lg:gap-3">
-          <h1 className="text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter lg:leading-snug">
+          <h1 className="text-4xl lg:text-5xl text-slate-800 dark:text-white font-semibold tracking-tighter lg:leading-snug">
             {article.name}
           </h1>
           <p className="text-slate-800 dark:text-slate-300 inline-flex gap-4 max-lg:leading-5">
             {capitalize(displayDate(article.date))}, {article.location}
           </p>
         </div>
-        <div className="flex items-center gap-4 py-3">
+        <div className="flex items-center gap-4 py-3 flex-wrap">
           {article.projectLink && (
             <Button style="primary" href={article.projectLink}>
               Voir notre projet
