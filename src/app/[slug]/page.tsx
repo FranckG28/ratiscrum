@@ -57,6 +57,7 @@ export async function generateMetadata(
       ...event.location.replace(", ", " ").split(" "),
       ...(event.tags ?? []),
     ],
+    applicationName: appName,
     creator: appName,
     publisher: appName,
     openGraph: {
