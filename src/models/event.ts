@@ -6,7 +6,7 @@ export interface Event extends EventPreview {
     location: string;
     excerpt: string;
     tags: string[];
-    technologies: string[];
+    technologies: string;
     projectLink: string;
     eventLink: string;
     sourceLink: string;
