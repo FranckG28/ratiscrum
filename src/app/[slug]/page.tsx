@@ -49,7 +49,15 @@ export async function generateMetadata(
     ...previousImages,
     title,
     description: event.excerpt,
-    keywords: [appName, "nuit de l'info", ...(event.tags ?? [])],
+    keywords: [
+      appName,
+      ...event.name.split(" "),
+      ...event.excerpt.split(" "),
+      ...event.technologies.replace(", ", " ").split(" "),
+      ...event.location.replace(", ", " ").split(" "),
+      ...(event.tags ?? []),
+    ],
+    applicationName: appName,
     creator: appName,
     publisher: appName,
     openGraph: {
